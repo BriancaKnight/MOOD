@@ -8,32 +8,21 @@
 import SwiftUI
 
 struct QuizResultView: View {
+    var result: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(result)
+            .padding()
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+            .font(.headline)
     }
 }
 
-#Preview {
-    QuizResultView()
+// Preview for QuizResultView
+struct QuizResultView_Previews: PreviewProvider {
+    static var previews: some View {
+        QuizResultView(result: "You might be feeling happy!")
+    }
 }
-
-
-//
-//import SwiftUI
-//
-//struct QuizResultView: View {
-//    var result: String
-//    
-//    var body: some View {
-//        Text(result)
-//            .padding()
-//            .background(Color.blue)
-//            .foregroundColor(.white)
-//            .cornerRadius(10)
-//            .font(.headline)
-//    }
-//}
-//
-//#Preview {
-//    QuizResultView(result: <#String#>)
-//}

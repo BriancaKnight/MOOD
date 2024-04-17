@@ -14,6 +14,9 @@
 		D70CECA12BD0436D006CA8AC /* MOODTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECA02BD0436D006CA8AC /* MOODTests.swift */; };
 		D70CECAB2BD0436D006CA8AC /* MOODUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECAA2BD0436D006CA8AC /* MOODUITests.swift */; };
 		D70CECAD2BD0436D006CA8AC /* MOODUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECAC2BD0436D006CA8AC /* MOODUITestsLaunchTests.swift */; };
+		D70CECC02BD05202006CA8AC /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECBF2BD05202006CA8AC /* Quiz.swift */; };
+		D70CECC22BD05266006CA8AC /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECC12BD05266006CA8AC /* PageView.swift */; };
+		D70CECC42BD06596006CA8AC /* QuizResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECC32BD06596006CA8AC /* QuizResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		D70CECB92BD045F7006CA8AC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D70CECBA2BD04612006CA8AC /* Capstone_Proposal.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Capstone_Proposal.md; sourceTree = "<group>"; };
 		D70CECBB2BD04622006CA8AC /* Capstone_Log.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Capstone_Log.md; sourceTree = "<group>"; };
+		D70CECBF2BD05202006CA8AC /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		D70CECC12BD05266006CA8AC /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		D70CECC32BD06596006CA8AC /* QuizResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +106,10 @@
 		D70CEC8E2BD04368006CA8AC /* MOOD */ = {
 			isa = PBXGroup;
 			children = (
-				D70CEC8F2BD04368006CA8AC /* MOODApp.swift */,
 				D70CEC912BD04368006CA8AC /* ContentView.swift */,
+				D70CEC8F2BD04368006CA8AC /* MOODApp.swift */,
+				D70CECBE2BD051AF006CA8AC /* Model */,
+				D70CECBC2BD05146006CA8AC /* Views */,
 				D70CEC932BD0436C006CA8AC /* Assets.xcassets */,
 				D70CEC952BD0436C006CA8AC /* Preview Content */,
 			);
@@ -131,6 +139,23 @@
 				D70CECAC2BD0436D006CA8AC /* MOODUITestsLaunchTests.swift */,
 			);
 			path = MOODUITests;
+			sourceTree = "<group>";
+		};
+		D70CECBC2BD05146006CA8AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D70CECC12BD05266006CA8AC /* PageView.swift */,
+				D70CECC32BD06596006CA8AC /* QuizResultView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D70CECBE2BD051AF006CA8AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D70CECBF2BD05202006CA8AC /* Quiz.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,7 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D70CEC922BD04368006CA8AC /* ContentView.swift in Sources */,
+				D70CECC22BD05266006CA8AC /* PageView.swift in Sources */,
+				D70CECC42BD06596006CA8AC /* QuizResultView.swift in Sources */,
 				D70CEC902BD04368006CA8AC /* MOODApp.swift in Sources */,
+				D70CECC02BD05202006CA8AC /* Quiz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

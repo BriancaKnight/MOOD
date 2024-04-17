@@ -27,7 +27,7 @@ let questions = [
         ),
     
     Quiz(questionText: "If your big feeling controlled the weather, what type of weather would it be?",
-         choices: ["A thunderstorm, all loud and feirce", "A rainy day with clouds and no sunshine", "You couldn't predict my weather- it would be all over the place."]
+         choices: ["A thunderstorm, all loud and fierce", "A rainy day with clouds and no sunshine", "You couldn't predict my weather- it would be all over the place."]
         ),
     
     Quiz(questionText: "What color would your big feeling be?",
@@ -35,7 +35,7 @@ let questions = [
         ),
     
     Quiz(questionText: "If your big feeling could make a sound, what would it sound like",
-         choices: ["They'd sound like a feirce roar!", "They'd sound like quiet sniffles and sobs", "They'd sound like nervous worries and whispers."]
+         choices: ["They'd sound like a fierce roar!", "They'd sound like quiet sniffles and sobs", "They'd sound like nervous worries and whispers."]
         ),
     
     Quiz(questionText: "If your BIG feeling was an animal, which animal would it be?",
@@ -76,73 +76,3 @@ func determineEmotion()-> String {
     }
 }
 
-
-
-//
-//
-//
-////
-////
-////let quiz = [
-////Question(questionText: "Is your voice loud?",
-////         angerChoice: "Yes! Loud and sharp!",
-////         angerPoints: 2,
-////         happyChoice: "A little! Just for fun!",
-////         happyPoints: 1,
-////         sadChoice: "No, my voice is quiet and wants to hide",
-////         sadPoints: 1,
-////         nextDestination: <#T##Int#>,
-////         endofQuiz: <#T##Bool#>),
-////
-////Question(questionText: "Do you feel like being alone?",
-////         angerChoice: "No! I need someone to see me!",
-////         angerPoints: 2,
-////         happyChoice: "A little! Just for fun!",
-////         happyPoints: 1,
-////         sadChoice: "No, my voice is quiet and wants to hide",
-////         sadPoints: 1,
-////         nextDestination: <#T##Int#>,
-////         endofQuiz: <#T##Bool#>),
-////]
-////
-////
-////let questions = [
-//////Quiz 1
-////    Question(questionText: "Where in your body are you feeling your feelings?",
-////         choice1: "In my face",
-////         choice1Destination: 1,
-////         choice2: "In my tummy",
-////         choice2Destination: 2,
-////         choice3: "In my chest",
-////         choice3Destination: 3,
-////         endofQuiz: false),
-////
-//////Quiz2
-////    Question(questionText: "What are your words doing?",
-////         choice1: "They are loud! I want to yell and scream!",
-////         choice1Destination: 1,
-////         choice2: "My words are hiding, I don't feel like talking at all.",
-////         choice2Destination: 2,
-////         choice3: "Everything! I could talk all day!",
-////         choice3Destination: 3,
-////         endofQuiz: false),
-////
-////    //Quiz3
-////    Question(questionText: "What do you want to do?",
-////         choice1: "I want to throw things and break my toys!",
-////         choice1Destination: 1,
-////         choice2: "I want to lay down and be alone.",
-////         choice2Destination: 2,
-////         choice3: "I want to play and run around with my friends",
-////         choice3Destination: 3,
-////         endofQuiz: false),
-////
-////    Question(questionText: "Would you like to retake the quiz?",
-////         choice1: "Yes, I would",
-////         choice1Destination: 1,
-////         choice2: "No, I'm done.",
-////         choice2Destination: 2,
-////         choice3: "I'm gonna think about it",
-////         choice3Destination: 3,
-////         endofQuiz: true)
-////]
