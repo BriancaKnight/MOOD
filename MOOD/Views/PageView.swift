@@ -12,15 +12,22 @@ struct PageView: View {
     @State private var tally: [Int: Int] = [1: 0, 2: 0, 3: 0]
     @State private var questionsAsked = 0
     @State private var quizEnded = false
-    @State private var shuffledQuestions: [Quiz] = []
+    
 
-    init(choiceMade: Binding<Int>) {
-        _choiceMade = choiceMade
-        _shuffledQuestions = State(initialValue: questions.shuffled())
+    @State private var currentQuestionIndex = 0
+    
+  
+    private var currentQuestion: Quiz? {
+        guard currentQuestionIndex < questions.count else {
+            quizEnded = true
+            return nil
+        }
+        return questions[currentQuestionIndex]
     }
-
+    
     var body: some View {
         ZStack {
+    
             LinearGradient(
                 gradient: Gradient(stops: [
                     Gradient.Stop(color: Color(red: 0.99, green: 0.40, blue: 0.61), location: 0.0),
@@ -33,33 +40,25 @@ struct PageView: View {
             )
             .ignoresSafeArea()
             
-            VStack {
-                if quizEnded {
-            
-                    QuizResultView(result: determineEmotion())
-                        .navigationTitle("Quiz Result")
-                } else {
-                    let currentPage: Quiz = shuffledQuestions[choiceMade]
-                    
+            if quizEnded {
+                QuizResultView(result: determineEmotion())
+                    .navigationTitle("Quiz Result")
+            } else {
+  
+                if let currentPage = currentQuestion {
                     VStack {
                         Text(currentPage.questionText)
                             .padding()
                             .background(Color.pink)
-                            .foregroundColor(.white)
                             .cornerRadius(10)
                         
                         ForEach(Array(currentPage.choices.enumerated()), id: \.offset) { index, choice in
                             Button(action: {
-                       
                                 processQuiz(response: index + 1)
                                 questionsAsked += 1
-
-                           
-                                if choiceMade < shuffledQuestions.count - 1 {
-                                    choiceMade += 1
-                                }
-
-                           
+                                choiceMade += 1
+                        
+                                currentQuestionIndex += 1
                                 checkQuizEnd()
                             }) {
                                 Text(choice)
@@ -70,6 +69,7 @@ struct PageView: View {
                             .cornerRadius(10)
                             .font(.headline)
                         }
+                        
                         Spacer()
                     }
                     .navigationTitle("Quiz")
@@ -77,18 +77,22 @@ struct PageView: View {
             }
         }
     }
-
-  
+    
     func checkQuizEnd() {
-        
-        if questionsAsked >= 5 || tally.values.contains(3) {
-            quizEnded = true
+        func checkQuizEnd() {
+            
+            let tallyValuesContainThree = tally.values.contains { $0 == 3 }
+            if questionsAsked >= 5 && tallyValuesContainThree {
+                quizEnded = true
+            } else if tallyValuesContainThree {
+                quizEnded = true
+            }
         }
     }
-}
-
-struct PageView_Previews: PreviewProvider {
-    static var previews: some View {
-        PageView(choiceMade: .constant(0))
+    
+    struct PageView_Previews: PreviewProvider {
+        static var previews: some View {
+            PageView(choiceMade: .constant(0))
+        }
     }
 }
