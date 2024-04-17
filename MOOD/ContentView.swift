@@ -32,13 +32,15 @@ struct ContentView: View {
 
                     Text("BIG feelings?")
                         .font(.largeTitle)
+                        .fontWeight(.heavy)
+                        .foregroundColor(Color.black)
                         .multilineTextAlignment(.center)
                     Text("Let's learn about your MOOD")
                         .font(.headline)
 
-                    // NavigationLink(destination: PageView(choiceMade: .constant(0))) {
-                    //     Text("Let's Go!")
-                    // }
+                     NavigationLink(destination: PageView(choiceMade: .constant(0))) {
+                         Text("Let's Go!")
+                     }
                     .buttonStyle(.borderedProminent)
                 }
             }
