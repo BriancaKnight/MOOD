@@ -38,4 +38,6 @@ This app aims to teach children how to identify emotions as well as provide sens
 
 #### Thursday, April 18
 
-*7:45 Whiteboarding practice 
+* 7:45 Whiteboarding practice 
+* 8:30:-10:45 code MOOD
+* 11:00: Find sounds for audio game 
