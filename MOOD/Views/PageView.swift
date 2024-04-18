@@ -45,8 +45,8 @@ struct PageView: View {
                     VStack {
                         Text(currentPage.questionText)
                             .padding()
-                            .font(.largeTitle) // Increase the text size
-                            .multilineTextAlignment(.center) // Center-align the text
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.center)
                             .cornerRadius(10)
                             
 

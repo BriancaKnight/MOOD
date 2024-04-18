@@ -12,7 +12,7 @@ struct QuizResultView: View {
     
     var body: some View {
         ZStack {
-          
+            // Gradient background
             LinearGradient(
                 gradient: Gradient(stops: [
                     Gradient.Stop(color: Color(red: 0.99, green: 0.40, blue: 0.61), location: 0.0),
@@ -25,8 +25,8 @@ struct QuizResultView: View {
             )
             .ignoresSafeArea()
             
-            VStack {
-               
+            VStack(spacing: 20) {
+                // Display different images based on the result
                 if result == "You might be feeling sad." {
                     Image("sad")
                         .resizable()
@@ -44,19 +44,23 @@ struct QuizResultView: View {
                         .frame(width: 200, height: 200)
                 }
                 
-         
+                // Result text
                 Text(result)
                     .padding()
                     .foregroundColor(.black)
-                    .cornerRadius(10)
                     .font(.system(size: 32, weight: .bold))
+                    .multilineTextAlignment(.center) // Center-align the text
+                    .background(Color.white.opacity(0.8)) // Background color with some opacity
+                    .cornerRadius(10)
                 
+                // Advice text
                 Text(getEmotionAdvice(result: result))
                     .padding()
-                    .background(Color.white)
                     .foregroundColor(.black)
+                    .font(.system(size: 18, weight: .medium))
+                    .multilineTextAlignment(.center) // Center-align the text
+                    .background(Color.white.opacity(0.8)) // Background color with some opacity
                     .cornerRadius(10)
-                    .font(.subheadline)
             }
             .padding()
         }
