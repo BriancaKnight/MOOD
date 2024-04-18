@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct AudioGameView: View {
+    @State private var audioPlayer: AVAudioPlayer?
+    
     var body: some View {
         ZStack {
-            
+            // Background gradient
             LinearGradient(
                 gradient: Gradient(stops: [
                     Gradient.Stop(color: Color(red: 0.99, green: 0.40, blue: 0.61), location: 0.0),
@@ -22,9 +25,31 @@ struct AudioGameView: View {
                 endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
+            
+
             Button("Play Sound") {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                playSound()
             }
+            .padding()
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+        }
+    }
+    
+    func playSound() {
+
+        if let soundURL = Bundle.main.url(forResource: "yourSoundFile", withExtension: "mp3") {
+            do {
+       
+                audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+           
+                audioPlayer?.play()
+            } catch {
+                print("Error playing sound: \(error.localizedDescription)")
+            }
+        } else {
+            print("Sound file not found.")
         }
     }
 }
