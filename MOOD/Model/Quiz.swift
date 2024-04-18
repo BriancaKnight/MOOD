@@ -56,14 +56,15 @@ func processQuiz(response: Int) {
 }
 
 func determineEmotion() -> String {
+    
     guard let maxTally = tally.values.max() else {
         return "No response recorded."
     }
-    
-    // Filter the tally dictionary for keys with the maximum tally
+
+
     let maxTallyKeys = tally.filter { $0.value == maxTally }.keys
-    
-    // Handle ties by selecting the first key, if any
+
+
     if let maxTallyKey = maxTallyKeys.first {
         switch maxTallyKey {
             case 1:
