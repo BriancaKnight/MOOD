@@ -33,15 +33,9 @@ This app aims to teach children how to identify emotions as well as provide sens
 
 * 8:00: Whiteboarding practice
 * 8:45: Restart quiz component for MOOD
-* 9:00: Troubleshoot git, combining repos / gitignores
-# Capstone_Log
+* 9:00: Troubleshoot git, combining repos / gitignore
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
 
-## Overview
+#### Thursday, April 18
 
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
-
-### Section header
-
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+*7:45 Whiteboarding practice 
