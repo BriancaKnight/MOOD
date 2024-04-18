@@ -25,22 +25,29 @@ struct ContentView: View {
                 .ignoresSafeArea()
                 
                 VStack {
-                    Image("clear")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 400, height: 400)
-
                     Text("BIG feelings?")
                         .font(.largeTitle)
                         .fontWeight(.heavy)
                         .foregroundColor(Color.black)
                         .multilineTextAlignment(.center)
+                    Image("clear")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 400, height: 400)
+
+                    
                     Text("Let's learn about your MOOD")
                         .font(.headline)
 
-                     NavigationLink(destination: PageView(choiceMade: .constant(0))) {
-                         Text("Let's Go!")
-                     }
+                    NavigationLink(destination: PageView(choiceMade: .constant(0))) {
+                        Text("Let's Go!")
+                    }
+                    .buttonStyle(.borderedProminent)
+                    
+                    // Add the new navigation button
+                    NavigationLink(destination: AudioGameView()) {
+                        Text("Calm-down game")
+                    }
                     .buttonStyle(.borderedProminent)
                 }
             }

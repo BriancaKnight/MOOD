@@ -31,23 +31,24 @@ struct QuizResultView: View {
                     Image("sad")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 200, height: 200)
+                        .frame(width: 400, height: 400)
                 } else if result == "You might be feeling angry." {
                     Image("mad")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 200, height: 200)
+                        .frame(width: 400, height: 400)
                 } else if result == "You might be feeling worried." {
                     Image("anxious")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 200, height: 200)
+                        .frame(width: 400, height: 400)
                 }
                 
            
                 Text(result)
                     .padding()
-                    .foregroundColor(.black)
+                    .background(Color.purple)
+                    .foregroundColor(.white)
                     .font(.system(size: 32, weight: .bold))
                     .multilineTextAlignment(.center)
                     .background(Color.white.opacity(0.8))

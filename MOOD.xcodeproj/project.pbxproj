@@ -17,6 +17,8 @@
 		D70CECC02BD05202006CA8AC /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECBF2BD05202006CA8AC /* Quiz.swift */; };
 		D70CECC22BD05266006CA8AC /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECC12BD05266006CA8AC /* PageView.swift */; };
 		D70CECC42BD06596006CA8AC /* QuizResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECC32BD06596006CA8AC /* QuizResultView.swift */; };
+		D75248262BD187E700F867AC /* AudioGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75248252BD187E700F867AC /* AudioGameView.swift */; };
+		D75248282BD18A8900F867AC /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75248272BD18A8900F867AC /* Audio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		D70CECBF2BD05202006CA8AC /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		D70CECC12BD05266006CA8AC /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		D70CECC32BD06596006CA8AC /* QuizResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultView.swift; sourceTree = "<group>"; };
+		D75248252BD187E700F867AC /* AudioGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioGameView.swift; sourceTree = "<group>"; };
+		D75248272BD18A8900F867AC /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 			children = (
 				D70CECC12BD05266006CA8AC /* PageView.swift */,
 				D70CECC32BD06596006CA8AC /* QuizResultView.swift */,
+				D75248252BD187E700F867AC /* AudioGameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				D70CECBF2BD05202006CA8AC /* Quiz.swift */,
+				D75248272BD18A8900F867AC /* Audio.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -289,10 +295,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D70CEC922BD04368006CA8AC /* ContentView.swift in Sources */,
+				D75248262BD187E700F867AC /* AudioGameView.swift in Sources */,
 				D70CECC22BD05266006CA8AC /* PageView.swift in Sources */,
 				D70CECC42BD06596006CA8AC /* QuizResultView.swift in Sources */,
 				D70CEC902BD04368006CA8AC /* MOODApp.swift in Sources */,
 				D70CECC02BD05202006CA8AC /* Quiz.swift in Sources */,
+				D75248282BD18A8900F867AC /* Audio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
