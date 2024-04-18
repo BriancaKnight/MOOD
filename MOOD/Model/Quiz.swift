@@ -55,24 +55,28 @@ func processQuiz(response: Int) {
     }
 }
 
-func determineEmotion()-> String {
-    guard let maxTally = tally.values.max()else {
-        return "No response recorded"
+func determineEmotion() -> String {
+    guard let maxTally = tally.values.max() else {
+        return "No response recorded."
     }
     
-    if let emotion = tally.first(where: { $0.value == maxTally }) {
-        switch emotion.key {
-        case 1:
-            return "You might be feeling angry."
-        case 2:
-            return "You might be feeling sad."
-        case 3:
-            return "You might be feeling worried."
-        default:
-            return "Invalid Response"
+    // Filter the tally dictionary for keys with the maximum tally
+    let maxTallyKeys = tally.filter { $0.value == maxTally }.keys
+    
+    // Handle ties by selecting the first key, if any
+    if let maxTallyKey = maxTallyKeys.first {
+        switch maxTallyKey {
+            case 1:
+                return "You might be feeling angry."
+            case 2:
+                return "You might be feeling sad."
+            case 3:
+                return "You might be feeling worried."
+            default:
+                return "Invalid response."
         }
     } else {
-        return "No predominate emotion detected."
+        return "No predominant emotion detected."
     }
 }
 
