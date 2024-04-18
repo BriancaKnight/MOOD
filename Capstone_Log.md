@@ -44,3 +44,4 @@ This app aims to teach children how to identify emotions as well as provide sens
 * 12:00: Edit sounds for audio game
 * 1:00: add audio file and build out audio model
 * 2:00: Write cover letter for puppod
+* 4:00: CONT audio research for MOOD 
