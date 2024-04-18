@@ -22,6 +22,9 @@ struct AudioGameView: View {
                 endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
+            Button("Play Sound") {
+                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+            }
         }
     }
 }

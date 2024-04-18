@@ -42,3 +42,4 @@ This app aims to teach children how to identify emotions as well as provide sens
 * 8:30:-10:45 code MOOD
 * 11:00: Find sounds for audio game 
 * 12:00: Edit sounds for audio game
+* 1:00: add audio file and build out audio model
