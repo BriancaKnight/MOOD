@@ -42,17 +42,21 @@ struct AudioGameView: View {
             .ignoresSafeArea()
 
             VStack {
-
-                Text(prompts[currentPromptIndex].promptText)
-                    .font(.system(size: 42, weight: .bold))
-                    .foregroundColor(Color.white)
-                    .padding(.leading)
                 
-         
+                // Display the image at the top of the page
+                Image("clear")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 300)
+//                    .padding()
+                    .padding(.top, 40)
+
+                // Button on top
                 Button("Play Sound") {
                     playSound()
                 }
                 .padding()
+                .font(.system(size: 30, weight: .regular))
                 .background(Color.purple)
                 .foregroundColor(.white)
                 .cornerRadius(10)
@@ -61,51 +65,70 @@ struct AudioGameView: View {
                         .stroke(Color.white, lineWidth: 2)
                 )
                 
+                // Display the prompt text below the button
+                Text(prompts[currentPromptIndex].promptText)
+                    .font(.system(size: 42, weight: .bold))
+                    .foregroundColor(Color.white)
+                    .padding(.leading)
+                    .padding(.bottom, 20)
+                    .shadow(color: Color.black, radius: 2, x: 0, y: 0)
 
                 Spacer()
                 
+                // Display the choices in a 2x2 grid
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 2), spacing: 20) {
-                    ForEach(0..<prompts[currentPromptIndex].choices.count, id: \.self) { index in
-                        Button(action: {
-                            handleChoiceSelection(choiceIndex: index)
-                        }) {
-                            Text(prompts[currentPromptIndex].choices[index])
-                                .padding()
-                                .frame(minWidth: 120, minHeight: 120)
-                                .font(.system(size: 16, weight: .medium))
-                                .multilineTextAlignment(.center)
-                                .lineLimit(2)
-                                .background(Color.white)
-                                .cornerRadius(10)
-                                .shadow(radius: 3)
+                        ForEach(0..<prompts[currentPromptIndex].choices.count, id: \.self) { index in
+                            Button(action: {
+                                handleChoiceSelection(choiceIndex: index)
+                            }) {
+                                Text(prompts[currentPromptIndex].choices[index])
+                                    .padding()
+                                    .frame(width: 160, height: 160) // Fixed size for each choice button
+                                    .font(.system(size: 18, weight: .medium))
+                                    .multilineTextAlignment(.center)
+                                    .lineLimit(2)
+                                    .background(Color.white)
+                                    .cornerRadius(10)
+                                    .shadow(radius: 3)
+                            }
                         }
                     }
+                    // Add padding at the bottom of the grid
+                    .padding(.bottom, 70) // Adjust padding value as needed
+                    .padding([.leading, .trailing]) // Add horizontal padding
                 }
-                .padding()
-            }
+                .padding([.top, .bottom], 20) // Add vertical padding around the entire VStack
             
             // Show feedback
             if showFeedback {
-                VStack {
-                    Text(feedbackMessage)
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 3)
-                        .padding()
+                ZStack {
+                    // A slightly transparent white background that covers the whole screen
+                    Color.white.opacity(0.8)
+                        .ignoresSafeArea()  // Covers the entire screen
+                    
+                    VStack {
+                        Text(feedbackMessage)
+                            .padding()
+                                 .background(Color.purple)
+                                 .foregroundColor(.white)
+                                 .cornerRadius(10)
+                                 .shadow(radius: 3)
+                                 .padding()
+                                 .font(.system(size: 30, weight: .bold))
+                                 .frame(maxWidth: .infinity)
+                                 .multilineTextAlignment(.center)
 
-                    Button("Next") {
-                        
-                        showFeedback = false
-                        moveToNextPrompt()
+                        Button("Next") {
+                            showFeedback = false
+                            moveToNextPrompt()
+                        }
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                     }
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)  // Fill the entire screen
                 }
-                .background(Color.black.opacity(0.4))
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
     }
@@ -119,7 +142,7 @@ struct AudioGameView: View {
         case 1:
             soundFileName = "rain"
         case 2:
-            soundFileName = "purr"
+            soundFileName = "pur"
         case 3:
             soundFileName = "ocean"
         case 4:
@@ -143,9 +166,9 @@ struct AudioGameView: View {
     func handleChoiceSelection(choiceIndex: Int) {
         let correctChoiceIndex = 0
         if choiceIndex == correctChoiceIndex {
-            feedbackMessage = "Correct! That was a " + prompts[currentPromptIndex].choices[correctChoiceIndex] + "."
+            feedbackMessage = "Yes! You got it! It was a " + prompts[currentPromptIndex].choices[correctChoiceIndex] + "."
         } else {
-            feedbackMessage = "Incorrect. The correct answer was " + prompts[currentPromptIndex].choices[correctChoiceIndex] + "."
+            feedbackMessage = "Opps! Not this time! It was a " + prompts[currentPromptIndex].choices[correctChoiceIndex] + "."
         }
 
         showFeedback = true
