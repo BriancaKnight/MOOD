@@ -39,7 +39,7 @@ struct ContentView: View {
                     Text("Let's learn about your MOOD")
                         .font(.headline)
 
-                    NavigationLink(destination: PageView(choiceMade: .constant(0))) {
+                    NavigationLink(destination: QuizView(choiceMade: .constant(0))) {
                         Text("Let's Go!")
                     }
                     .buttonStyle(.borderedProminent)

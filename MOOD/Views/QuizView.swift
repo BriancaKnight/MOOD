@@ -1,5 +1,5 @@
 //
-//  PageView.swift
+//  QuizView.swift
 //  MOOD
 //
 //  Created by Brianca Knight on 4/17/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PageView: View {
+struct QuizView: View {
     @Binding var choiceMade: Int
     @State private var tally: [Int: Int] = [1: 0, 2: 0, 3: 0]
     @State private var questionsAsked = 0
@@ -69,8 +69,8 @@ struct PageView: View {
         }
     }
     
-    struct PageView_Previews: PreviewProvider {
+    struct QuizView_Previews: PreviewProvider {
         static var previews: some View {
-            PageView(choiceMade: .constant(0))
+            QuizView(choiceMade: .constant(0))
         }
     }

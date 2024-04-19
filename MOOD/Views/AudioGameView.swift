@@ -12,13 +12,13 @@ struct AudioGameView: View {
     let prompts: [Audio] = [
         Audio(promptText: "What do you hear?",
              choices: ["A bird tweeting", "A choo choo train", "Kids having fun", "Beads falling on the floor"]),
-        Audio(promptText: "Which sound is this?",
-             choices: ["Peaceful raindrops", "Someone cooking in the kitchen", "Balloons popping", "The sounds of footsteps on gravel"]),
         Audio(promptText: "Listen closely...",
+             choices: ["Peaceful raindrops", "Someone cooking in the kitchen", "Balloons popping", "The sounds of footsteps on gravel"]),
+        Audio(promptText: "Hmmm...",
              choices: ["A purring kitten", "Coins jingling", "A rollercoaster", "A dog barking"]),
         Audio(promptText: "Use your ears!",
              choices: ["The ocean waves crashing", "A game of bowling", "A cow mooing", "A horn honking"]),
-        Audio(promptText: "Deep breath, and listen...",
+        Audio(promptText: "Open your ears!",
              choices: ["A zipper zipping!", "Someone eating a carrot", "An egg being cracked", "Someone skateboarding"]),
     ]
 
@@ -26,6 +26,7 @@ struct AudioGameView: View {
     @State private var audioPlayer: AVAudioPlayer?
     @State private var showFeedback = false
     @State private var feedbackMessage = ""
+    @State private var choiceIsCorrect = false
 
     var body: some View {
         ZStack {
@@ -40,16 +41,15 @@ struct AudioGameView: View {
                 endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
-
+            
             VStack {
-             
+                
                 Image("clear")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 300)
-//                    .padding()
                     .padding(.top, 40)
-
+                
                 Button("Play Sound") {
                     playSound()
                 }
@@ -66,61 +66,69 @@ struct AudioGameView: View {
                 Text(prompts[currentPromptIndex].promptText)
                     .font(.system(size: 42, weight: .bold))
                     .foregroundColor(Color.white)
-                    .padding(.leading)
+                    .padding([.leading, .trailing], 10)
                     .padding(.bottom, 20)
                     .shadow(color: Color.black, radius: 2, x: 0, y: 0)
-
+                    .multilineTextAlignment(.center)
+                    .lineLimit(nil)
+                    .frame(maxWidth: .infinity)
+                
                 Spacer()
                 
-           
+                
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 2), spacing: 20) {
-                        ForEach(0..<prompts[currentPromptIndex].choices.count, id: \.self) { index in
-                            Button(action: {
-                                handleChoiceSelection(choiceIndex: index)
-                            }) {
-                                Text(prompts[currentPromptIndex].choices[index])
-                                    .padding()
-                                    .frame(width: 160, height: 160)
-                                    .font(.system(size: 18, weight: .medium))
-                                    .multilineTextAlignment(.center)
-                                    .lineLimit(2)
-                                    .background(Color.white)
-                                    .cornerRadius(10)
-                                    .shadow(radius: 3)
-                            }
+                    ForEach(0..<prompts[currentPromptIndex].choices.count, id: \.self) { index in
+                        Button(action: {
+                            handleChoiceSelection(choiceIndex: index)
+                        }) {
+                            Text(prompts[currentPromptIndex].choices[index])
+                                .padding()
+                                .frame(width: 160, height: 160)
+                                .font(.system(size: 20, weight: .bold))
+                                .multilineTextAlignment(.center)
+                                .lineLimit(2)
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .shadow(radius: 3)
                         }
                     }
-               
-                    .padding(.bottom, 70)
-                    .padding([.leading, .trailing])
                 }
-                .padding([.top, .bottom], 20)
+                
+                .padding(.bottom, 70)
+                .padding([.leading, .trailing])
+            }
+            .padding([.top, .bottom], 20)
             
-            // Show feedback
             if showFeedback {
                 ZStack {
                     Color.white.opacity(0.9)
                         .ignoresSafeArea()
                     
                     VStack {
-           
-
                         Text(feedbackMessage)
                             .padding()
-                                 .background(Color.purple)
-                                 .foregroundColor(.white)
-                                 .cornerRadius(10)
-                                 .shadow(radius: 3)
-                                 .padding()
-                                 .font(.system(size: 30, weight: .bold))
-                                 .frame(maxWidth: .infinity)
-                                 .multilineTextAlignment(.center)
-
-                        Image("clear")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 300)
-                            .padding(.top, 40)
+                            .background(Color.purple)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 3)
+                            .padding()
+                            .font(.system(size: 30, weight: .bold))
+                            .frame(maxWidth: .infinity)
+                            .multilineTextAlignment(.center)
+                        
+                        if choiceIsCorrect {
+                            Image("happy")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 300)
+                                .padding(.top, 40)
+                        } else {
+                            Image("sad")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 300)
+                                .padding(.top, 40)
+                        }
                         
                         Button("Next") {
                             showFeedback = false
@@ -170,11 +178,12 @@ struct AudioGameView: View {
     func handleChoiceSelection(choiceIndex: Int) {
         let correctChoiceIndex = 0
         if choiceIndex == correctChoiceIndex {
+            choiceIsCorrect = true
             feedbackMessage = "Yes! You got it! It was a " + prompts[currentPromptIndex].choices[correctChoiceIndex] + "."
         } else {
+            choiceIsCorrect = false
             feedbackMessage = "Opps! Not this time! It was a " + prompts[currentPromptIndex].choices[correctChoiceIndex] + "."
         }
-
         showFeedback = true
     }
 
