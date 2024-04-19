@@ -15,8 +15,9 @@
 		D70CECAB2BD0436D006CA8AC /* MOODUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECAA2BD0436D006CA8AC /* MOODUITests.swift */; };
 		D70CECAD2BD0436D006CA8AC /* MOODUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECAC2BD0436D006CA8AC /* MOODUITestsLaunchTests.swift */; };
 		D70CECC02BD05202006CA8AC /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECBF2BD05202006CA8AC /* Quiz.swift */; };
-		D70CECC22BD05266006CA8AC /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECC12BD05266006CA8AC /* QuizView.swift */; };
+		D70CECC22BD05266006CA8AC /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECC12BD05266006CA8AC /* PageView.swift */; };
 		D70CECC42BD06596006CA8AC /* QuizResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CECC32BD06596006CA8AC /* QuizResultView.swift */; };
+		D71BE5F82BD3295900115D77 /* ParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71BE5F72BD3295900115D77 /* ParentView.swift */; };
 		D75248262BD187E700F867AC /* AudioGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75248252BD187E700F867AC /* AudioGameView.swift */; };
 		D75248282BD18A8900F867AC /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75248272BD18A8900F867AC /* Audio.swift */; };
 		D752482F2BD1AC2900F867AC /* bird.wav in Resources */ = {isa = PBXBuildFile; fileRef = D75248292BD1AC2900F867AC /* bird.wav */; };
@@ -58,8 +59,9 @@
 		D70CECBA2BD04612006CA8AC /* Capstone_Proposal.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Capstone_Proposal.md; sourceTree = "<group>"; };
 		D70CECBB2BD04622006CA8AC /* Capstone_Log.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Capstone_Log.md; sourceTree = "<group>"; };
 		D70CECBF2BD05202006CA8AC /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
-		D70CECC12BD05266006CA8AC /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		D70CECC12BD05266006CA8AC /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		D70CECC32BD06596006CA8AC /* QuizResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultView.swift; sourceTree = "<group>"; };
+		D71BE5F72BD3295900115D77 /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
 		D75248252BD187E700F867AC /* AudioGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioGameView.swift; sourceTree = "<group>"; };
 		D75248272BD18A8900F867AC /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		D75248292BD1AC2900F867AC /* bird.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bird.wav; sourceTree = "<group>"; };
@@ -159,9 +161,10 @@
 		D70CECBC2BD05146006CA8AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D70CECC12BD05266006CA8AC /* QuizView.swift */,
+				D70CECC12BD05266006CA8AC /* PageView.swift */,
 				D70CECC32BD06596006CA8AC /* QuizResultView.swift */,
 				D75248252BD187E700F867AC /* AudioGameView.swift */,
+				D71BE5F72BD3295900115D77 /* ParentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,9 +325,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71BE5F82BD3295900115D77 /* ParentView.swift in Sources */,
 				D70CEC922BD04368006CA8AC /* ContentView.swift in Sources */,
 				D75248262BD187E700F867AC /* AudioGameView.swift in Sources */,
-				D70CECC22BD05266006CA8AC /* QuizView.swift in Sources */,
+				D70CECC22BD05266006CA8AC /* PageView.swift in Sources */,
 				D70CECC42BD06596006CA8AC /* QuizResultView.swift in Sources */,
 				D70CEC902BD04368006CA8AC /* MOODApp.swift in Sources */,
 				D70CECC02BD05202006CA8AC /* Quiz.swift in Sources */,
