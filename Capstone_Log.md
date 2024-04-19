@@ -50,3 +50,5 @@ This app aims to teach children how to identify emotions as well as provide sens
 #### Friday, April 19
 
 * 9:00: Whitebaording
+* 9:45: Interview preperation
+

@@ -39,7 +39,7 @@ struct AudioGameView: View {
     
     func playSound() {
 
-        if let soundURL = Bundle.main.url(forResource: "yourSoundFile", withExtension: "mp3") {
+        if let soundURL = Bundle.main.url(forResource: "bird", withExtension: "wav") {
             do {
        
                 audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
