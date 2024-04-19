@@ -42,8 +42,7 @@ struct AudioGameView: View {
             .ignoresSafeArea()
 
             VStack {
-                
-                // Display the image at the top of the page
+             
                 Image("clear")
                     .resizable()
                     .scaledToFit()
@@ -51,7 +50,6 @@ struct AudioGameView: View {
 //                    .padding()
                     .padding(.top, 40)
 
-                // Button on top
                 Button("Play Sound") {
                     playSound()
                 }
@@ -65,7 +63,6 @@ struct AudioGameView: View {
                         .stroke(Color.white, lineWidth: 2)
                 )
                 
-                // Display the prompt text below the button
                 Text(prompts[currentPromptIndex].promptText)
                     .font(.system(size: 42, weight: .bold))
                     .foregroundColor(Color.white)
@@ -75,7 +72,7 @@ struct AudioGameView: View {
 
                 Spacer()
                 
-                // Display the choices in a 2x2 grid
+           
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 2), spacing: 20) {
                         ForEach(0..<prompts[currentPromptIndex].choices.count, id: \.self) { index in
                             Button(action: {
@@ -83,7 +80,7 @@ struct AudioGameView: View {
                             }) {
                                 Text(prompts[currentPromptIndex].choices[index])
                                     .padding()
-                                    .frame(width: 160, height: 160) // Fixed size for each choice button
+                                    .frame(width: 160, height: 160)
                                     .font(.system(size: 18, weight: .medium))
                                     .multilineTextAlignment(.center)
                                     .lineLimit(2)
@@ -93,20 +90,21 @@ struct AudioGameView: View {
                             }
                         }
                     }
-                    // Add padding at the bottom of the grid
-                    .padding(.bottom, 70) // Adjust padding value as needed
-                    .padding([.leading, .trailing]) // Add horizontal padding
+               
+                    .padding(.bottom, 70)
+                    .padding([.leading, .trailing])
                 }
-                .padding([.top, .bottom], 20) // Add vertical padding around the entire VStack
+                .padding([.top, .bottom], 20)
             
             // Show feedback
             if showFeedback {
                 ZStack {
-                    // A slightly transparent white background that covers the whole screen
-                    Color.white.opacity(0.8)
-                        .ignoresSafeArea()  // Covers the entire screen
+                    Color.white.opacity(0.9)
+                        .ignoresSafeArea()
                     
                     VStack {
+           
+
                         Text(feedbackMessage)
                             .padding()
                                  .background(Color.purple)
@@ -118,6 +116,12 @@ struct AudioGameView: View {
                                  .frame(maxWidth: .infinity)
                                  .multilineTextAlignment(.center)
 
+                        Image("clear")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 300)
+                            .padding(.top, 40)
+                        
                         Button("Next") {
                             showFeedback = false
                             moveToNextPrompt()
@@ -127,7 +131,7 @@ struct AudioGameView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)  // Fill the entire screen
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
         }
