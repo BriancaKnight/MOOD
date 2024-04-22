@@ -5,7 +5,6 @@
 //  Created by Brianca Knight on 4/17/24.
 //
 
-
 import Foundation
 
 struct Quiz {
@@ -40,12 +39,12 @@ let questions = [
 ]
 
 var tally: [Int: Int] = [1: 0, 2: 0, 3: 0]
-
 func processQuiz(response: Int) {
     if let count = tally[response] {
         tally[response] = count + 1
     }
 }
+
 
 func determineEmotion() -> String {
     guard let maxTally = tally.values.max() else {

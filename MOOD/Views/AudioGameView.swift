@@ -1,3 +1,4 @@
+
 //
 //  AudioGameView.swift
 //  MOOD
@@ -21,13 +22,13 @@ struct AudioGameView: View {
         Audio(promptText: "Open your ears!",
              choices: ["A zipper zipping!", "Someone eating a carrot", "An egg being cracked", "Someone skateboarding"]),
     ]
-
+    
     @State private var currentPromptIndex = 0
     @State private var audioPlayer: AVAudioPlayer?
     @State private var showFeedback = false
     @State private var feedbackMessage = ""
     @State private var choiceIsCorrect = false
-
+    
     var body: some View {
         ZStack {
             LinearGradient(
@@ -48,7 +49,7 @@ struct AudioGameView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(height: 300)
-                    .padding(.top, 40)
+                    .padding(.top, 70)
                 
                 Button("Play Sound") {
                     playSound()
@@ -94,7 +95,7 @@ struct AudioGameView: View {
                     }
                 }
                 
-                .padding(.bottom, 70)
+                .padding(.bottom, 120)
                 .padding([.leading, .trailing])
             }
             .padding([.top, .bottom], 20)
@@ -135,7 +136,7 @@ struct AudioGameView: View {
                             moveToNextPrompt()
                         }
                         .padding()
-                        .background(Color.blue)
+                        .background(Color.purple)
                         .foregroundColor(.white)
                         .cornerRadius(10)
                     }
@@ -144,7 +145,7 @@ struct AudioGameView: View {
             }
         }
     }
-
+    
     func playSound() {
         let soundFileName: String
         
@@ -162,7 +163,6 @@ struct AudioGameView: View {
         default:
             return
         }
-
         if let soundURL = Bundle.main.url(forResource: soundFileName, withExtension: "wav") {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
@@ -174,7 +174,7 @@ struct AudioGameView: View {
             print("Sound file not found.")
         }
     }
-
+    
     func handleChoiceSelection(choiceIndex: Int) {
         let correctChoiceIndex = 0
         if choiceIndex == correctChoiceIndex {
@@ -186,7 +186,7 @@ struct AudioGameView: View {
         }
         showFeedback = true
     }
-
+    
     func moveToNextPrompt() {
         audioPlayer?.stop()
         currentPromptIndex += 1
@@ -195,7 +195,6 @@ struct AudioGameView: View {
         }
     }
 }
-
 #Preview {
     AudioGameView()
 }

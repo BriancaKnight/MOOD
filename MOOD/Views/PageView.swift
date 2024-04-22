@@ -1,5 +1,5 @@
 //
-//  QuizView.swift
+//  PageView.swift
 //  MOOD
 //
 //  Created by Brianca Knight on 4/17/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuizView: View {
+struct PageView: View {
     @Binding var choiceMade: Int
     @State private var tally: [Int: Int] = [1: 0, 2: 0, 3: 0]
     @State private var questionsAsked = 0
@@ -61,7 +61,6 @@ struct QuizView: View {
         }
     }
         
-
         func checkQuizEnd() {
             if questionsAsked >= 5 || tally.values.contains(3) {
                 quizEnded = true
@@ -69,8 +68,8 @@ struct QuizView: View {
         }
     }
     
-    struct QuizView_Previews: PreviewProvider {
+    struct PageView_Previews: PreviewProvider {
         static var previews: some View {
-            QuizView(choiceMade: .constant(0))
+            PageView(choiceMade: .constant(0))
         }
     }

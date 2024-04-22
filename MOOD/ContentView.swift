@@ -34,7 +34,6 @@ struct ContentView: View {
                 
                     Spacer()
                         .frame(height: 0)
-
                     Image("clear")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -57,17 +56,16 @@ struct ContentView: View {
 //                        .font(.system(size: 45, weight: .bold))
 //                        .padding([.leading, .trailing], 10)
 //                        .shadow(color: Color.black, radius: 2, x: 0, y: 0)
-
+                    
+                    
                     NavigationLink(destination: PageView(choiceMade: .constant(0))) {
                         Text("BIG Feelings Quiz")
-                            .font(.system(size: 22, weight: .bold)) 
+                            .font(.system(size: 22, weight: .bold))
                             .padding(.horizontal, 20)
                             .padding(.vertical, 10)
                            
                     }
                     .buttonStyle(.borderedProminent)
-
-
                     NavigationLink(destination: AudioGameView()) {
                         Text("Audio Adventure Game")
                             .font(.system(size: 22, weight: .bold))
@@ -89,7 +87,6 @@ struct ContentView: View {
         }
     }
 }
-
 #Preview {
     ContentView()
 }

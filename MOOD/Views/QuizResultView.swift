@@ -59,7 +59,7 @@ struct QuizResultView: View {
                     .padding()
                     .foregroundColor(.black)
                     .font(.system(size: 18, weight: .medium))
-                    .multilineTextAlignment(.center) 
+                    .multilineTextAlignment(.center)
                     .background(Color.white.opacity(0.8))
                     .cornerRadius(10)
             }
@@ -67,7 +67,6 @@ struct QuizResultView: View {
         }
     }
     
-
     func getEmotionAdvice(result: String) -> String {
         switch result {
             case "You might be feeling sad.":
@@ -81,7 +80,6 @@ struct QuizResultView: View {
         }
     }
 }
-
 
 struct QuizResultView_Previews: PreviewProvider {
     static var previews: some View {
