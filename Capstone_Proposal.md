@@ -45,5 +45,3 @@ Is there anything else you'd like your instructor to know?
 
 I have more long-term goals for this project (like creating user profiles and expanding the app for different age groups including adults) but at the moment I feel like the flex goals I have implemented are more than enough to spend my capstone time perfecting. To me I'd rather have seamless integration of my MVP and initial flex goals. 
 
-
-....

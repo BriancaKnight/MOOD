@@ -1,4 +1,3 @@
-
 //
 //  AudioGameView.swift
 //  MOOD
@@ -28,6 +27,7 @@ struct AudioGameView: View {
     @State private var showFeedback = false
     @State private var feedbackMessage = ""
     @State private var choiceIsCorrect = false
+    @State private var isGameFinished = false
     
     var body: some View {
         ZStack {
@@ -131,16 +131,66 @@ struct AudioGameView: View {
                                 .padding(.top, 40)
                         }
                         
-                        Button("Next") {
-                            showFeedback = false
-                            moveToNextPrompt()
+                        if currentPromptIndex != prompts.count - 1 {
+                            Button("Next") {
+                                showFeedback = false
+                                moveToNextPrompt()
+                            }
+                            .padding()
+                            .background(Color.purple)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                        }
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+            }
+            
+            if isGameFinished {
+                ZStack {
+                    Color.white.opacity(0.9)
+                        .ignoresSafeArea()
+                    
+                    VStack(spacing: 20) {
+                        Text("Whew, that was fun! Wanna play again?")
+                            .padding()
+                            .background(Color.purple)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .shadow(radius: 3)
+                            .padding()
+                            .font(.system(size: 30, weight: .bold))
+                            .frame(maxWidth: .infinity)
+                            .multilineTextAlignment(.center)
+                        
+                        Image("clear")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 300)
+                            .padding(.top, 70)
+                        
+                        Button("Play Again") {
+                            restartGame()
                         }
                         .padding()
                         .background(Color.purple)
                         .foregroundColor(.white)
                         .cornerRadius(10)
+                        
+                        NavigationLink(destination: ContentView()) {
+                            Text("No thanks, take me home")
+                                .padding()
+                                .background(Color.purple)
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        isGameFinished = true
+                    }
                 }
             }
         }
@@ -182,9 +232,15 @@ struct AudioGameView: View {
             feedbackMessage = "Yes! You got it! It was a " + prompts[currentPromptIndex].choices[correctChoiceIndex] + "."
         } else {
             choiceIsCorrect = false
-            feedbackMessage = "Opps! Not this time! It was a " + prompts[currentPromptIndex].choices[correctChoiceIndex] + "."
+            feedbackMessage = "Oops! Not this time! It was a " + prompts[currentPromptIndex].choices[correctChoiceIndex] + "."
         }
         showFeedback = true
+        
+        if currentPromptIndex == prompts.count - 1 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                isGameFinished = true
+            }
+        }
     }
     
     func moveToNextPrompt() {
@@ -194,7 +250,15 @@ struct AudioGameView: View {
             currentPromptIndex = 0
         }
     }
+    
+    func restartGame() {
+        currentPromptIndex = 0
+        isGameFinished = false
+    }
 }
-#Preview {
-    AudioGameView()
+
+struct AudioGameView_Previews: PreviewProvider {
+    static var previews: some View {
+        AudioGameView()
+    }
 }
