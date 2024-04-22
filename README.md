@@ -20,8 +20,8 @@
 An emotional regulation app for children ages 5-8. This app was created to address the need for emotional regulation tools for children and provide opportunities for kids and their grown-ups to navigate big emotions in a way that is accessible and engaging for young users. By focusing on interactive activities and tools, the app empowers children to understand and manage their emotions while fostering open communication and collaboration between children and their caregivers. The platform aims to offer a safe and supportive space where children can learn emotional intelligence and resilience, laying the foundation for healthier relationships and emotional well-being.
 
 ## Built With
-[![Swift](https://img.shields.io/badge/Swift-6e5494.svg?style=for-the-badge&logo=swift&logoColor=white)
-[![Git](https://img.shields.io/badge/git-%23FF69B4.svg?style=for-the-badge&logo=git&logoColor=white)
+![Swift](https://img.shields.io/badge/Swift-6e5494.svg?style=for-the-badge&logo=swift&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23FF69B4.svg?style=for-the-badge&logo=git&logoColor=white)
 ![Xcode](https://img.shields.io/badge/Xcode-0078d7.svg?style=for-the-badge&logo=Xcode&logoColor=white)
 
 
