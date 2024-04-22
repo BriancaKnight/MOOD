@@ -1,7 +1,7 @@
 # MOOD
 ## By Brianca Knight (https://github.com/BriancaKnight)
 
-![Home Page for MOOD](./Assets/Screenshot.png)
+![Home Page for MOOD](./MOOD/Assets/Screenshot)
 
 ---
 ### <u>Jump to section</u>
