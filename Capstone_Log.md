@@ -66,3 +66,4 @@ This app aims to teach children how to identify emotions as well as provide sens
 * 8:00: AdSol interview prep 
 * 9:00: Travel/ interview
 * 10:50: Finish interview and travel back home
+* 12:15: Redesign assets 
