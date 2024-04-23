@@ -26,6 +26,7 @@ struct PageView: View {
                 endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
+            
             if quizEnded {
                 QuizResultView(result: determineEmotion())
                     .navigationTitle("Quiz Result")
@@ -34,9 +35,19 @@ struct PageView: View {
                 let currentPage: Quiz = shuffledQuestions[choiceMade]
                 
                 VStack {
+                    
+                    Image("clear")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 300)
+                        .padding(.top, 70)
+                    
                     Text(currentPage.questionText)
+                        .font(.system(size: 30, weight: .bold))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
                         .padding()
-                        .background(Color.pink)
+                 
                     
                     ForEach(Array(currentPage.choices.enumerated()), id: \.offset) { index, choice in
                         Button(action: {
@@ -46,12 +57,14 @@ struct PageView: View {
                             checkQuizEnd()
                         }) {
                             Text(choice)
+                                .padding()
+                                .background(Color.white)
+                                .foregroundColor(.purple)
+                                .cornerRadius(10)
+                                .font(.headline)
                         }
-                        .padding()
-                        .background(Color.green)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .font(.headline)
+                        .padding(.horizontal)
+                        .padding(.vertical, 5)
                     }
                     
                     Spacer()
@@ -60,16 +73,16 @@ struct PageView: View {
             }
         }
     }
-        
-        func checkQuizEnd() {
-            if questionsAsked >= 5 || tally.values.contains(3) {
-                quizEnded = true
-            }
-        }
-    }
     
-    struct PageView_Previews: PreviewProvider {
-        static var previews: some View {
-            PageView(choiceMade: .constant(0))
+    func checkQuizEnd() {
+        if questionsAsked >= 5 || tally.values.contains(3) {
+            quizEnded = true
         }
     }
+}
+
+struct PageView_Previews: PreviewProvider {
+    static var previews: some View {
+        PageView(choiceMade: .constant(0))
+    }
+}
