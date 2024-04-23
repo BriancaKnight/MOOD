@@ -52,3 +52,12 @@ This app aims to teach children how to identify emotions as well as provide sens
 * 9:00: Whitebaording
 * 9:45: Interview preperation
 
+#### Monday, April 22nd
+
+* 7:45: Work on fixing git
+* 9:15: Prep/Interview with PupPod
+* 10:45: Interviewee scrum
+* 11:15: Write follow up email to pupPod
+* 1:00: Compile material for AdSol
+* 5:20: Update assets
+
