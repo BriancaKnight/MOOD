@@ -70,3 +70,4 @@ This app aims to teach children how to identify emotions as well as provide sens
 * 2:30: Cont assets
 * 3:30: Write thank you email for AdSol
 * 4:00: Begin adding new assets to MOOD 
+* 4:30: Make assets transparent 
