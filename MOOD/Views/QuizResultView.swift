@@ -69,11 +69,11 @@ struct QuizResultView: View {
     
     func getEmotionAdvice(result: String) -> String {
         switch result {
-            case "You might be feeling sad.":
+            case "You might be feeling sad":
                 return "It's okay to feel sad. Try talking to someone you trust or listen to music that makes you feel calm."
-            case "You might be feeling angry.":
+            case "You might be feeling angry":
                 return "Anger can be tough to handle. Try taking deep breaths or going for a walk to calm down."
-            case "You might be feeling worried.":
+            case "You might be feeling worried":
                 return "Worry can be hard to control. Try writing down your thoughts or talking to someone about them."
             default:
                 return ""
@@ -83,6 +83,6 @@ struct QuizResultView: View {
 
 struct QuizResultView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizResultView(result: "You might be feeling angry!")
+        QuizResultView(result: "You might be feeling angry")
     }
 }

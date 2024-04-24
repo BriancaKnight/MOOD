@@ -52,5 +52,66 @@
 //        }
 //    }
 //    
-
+//    func finishRecording(success: Bool) {
+//        audioRecorder.stop()
+//        audioRecorder = nil
+//    }
+//
+//    func getDocumentsDirectory() -> URL {
+//        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        let documentsDirectory = paths[0]
+//        return documentsDirectory
+//    }
+//    
+//    func startCheckingBlowing() {
+//        let timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+//            self.isBlowingOnMicrophone()
+//        }
+//        timer.fire()
+//    }
+//    
+//    func isBlowingOnMicrophone() {
+//        audioRecorder.updateMeters()
+//        let averagePower = audioRecorder.averagePower(forChannel: 0)
+//        let peakPower = audioRecorder.peakPower(forChannel: 0)
+//        let ALPHA: Double = 0.05
+//        
+//        lowPassResults = ALPHA * Double(averagePower) + (1.0 - ALPHA) * lowPassResults
+//        
+//        if lowPassResults > -30 && !isBlowing {
+//            isBlowing = true
+//            print("Blowing detected")
+//            // Blow action, you can put your blow out candle code here
+//        } else if lowPassResults < -30 && isBlowing {
+//            isBlowing = false
+//        }
+//    }
+//    
+//    // Adding the Microphone permission to the app's Info.plist
+//    func addMicrophoneUsageDescription() {
+//        guard let infoDictionary = Bundle.main.infoDictionary else {
+//            fatalError("Info.plist not found!")
+//        }
+//        
+//        if infoDictionary["NSMicrophoneUsageDescription"] == nil {
+//            fatalError("Please add NSMicrophoneUsageDescription to Info.plist.")
+//        }
+//    }
+//}
+//
+//struct MicrophoneView: View {
+//    @ObservedObject var microphoneManager = MicrophoneManager()
+//    
+//    var body: some View {
+//        Text("Blow here")
+//            .onAppear {
+//                self.microphoneManager.startCheckingBlowing()
+//            }
+//    }
+//}
+//
+//struct MicrophoneView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MicrophoneView()
+//    }
 //}

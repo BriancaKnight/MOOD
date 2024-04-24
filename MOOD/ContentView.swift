@@ -40,23 +40,6 @@ struct ContentView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 400, height: 400)
                         .padding(.bottom, -25)
-//                        .padding(.bottom, 10)
-                    
-//                    Text("Let's learn about your")
-//                        .fontWeight(.heavy)
-//                        .foregroundColor(Color.white)
-//                        .multilineTextAlignment(.center)
-//                        .font(.system(size: 30, weight: .bold))
-//                        .padding([.leading, .trailing], 10)
-//                        .shadow(color: Color.black, radius: 2, x: 0, y: 0)
-//
-//                    Text("MOOD!")
-//                        .fontWeight(.heavy)
-//                        .foregroundColor(Color.white)
-//                        .multilineTextAlignment(.center)
-//                        .font(.system(size: 45, weight: .bold))
-//                        .padding([.leading, .trailing], 10)
-//                        .shadow(color: Color.black, radius: 2, x: 0, y: 0)
                     
                     
                     NavigationLink(destination: PageView(choiceMade: .constant(0))) {
