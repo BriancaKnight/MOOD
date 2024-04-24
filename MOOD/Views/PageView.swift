@@ -36,7 +36,7 @@ struct PageView: View {
                 
                 VStack {
                     
-                    Image("clear")
+                    Image("mooneyHappy")
                         .resizable()
                         .scaledToFit()
                         .frame(height: 300)

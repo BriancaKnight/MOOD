@@ -14,19 +14,19 @@ struct Audio {
 
 let prompt = [
     Audio(promptText: "What do you hear?",
-         choices: ["A bird tweeting", "A choo choo train", "Kids having fun", "Beads falling on the floor"]),
+         choices: ["birds tweeting", "choo choo trains", "kids playing", "beads falling on the floor"]),
     
     Audio(promptText: "Listen closely...",
-         choices: ["Peaceful raindrops", "Someone cooking in the kitchen", "Baloons popping", "The sounds of footsteps on gravel"]),
+         choices: ["peaceful raindrops", "cooking in the kitchen", "baloons popping", "footsteps on gravel"]),
     
     Audio(promptText: "Hmmm...",
-         choices: ["A purring kitten", "Coins jinggling", "A rollercoaster", "A dog barking"]),
+         choices: ["purring kittens", "coins jinggling", "rollercoaster rides", "dogs barking"]),
     
     Audio(promptText: "Use your ears!",
-         choices: ["The ocean waves crashing", "A game of bowling", "A cow mooing", "A horn honking"]),
+         choices: ["waves crashing", "crashing bowling pins", "cows mooing", "horns honking"]),
     
     Audio(promptText: "Open your ears!",
-         choices: ["A zipper zipping!", "Someone eating a carrot", "An egg being cracked", "Someoone skateboarding"]),
+         choices: ["zippers zipping", "munching carrots", "eggs being cracked", "bees buzzing"]),
     
    
 ]

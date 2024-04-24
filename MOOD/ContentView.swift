@@ -30,16 +30,17 @@ struct ContentView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 400)
-                        .padding(.bottom, -40)
+                        .padding(.bottom, -30)
                 
                     Spacer()
                         .frame(height: 0)
-                    Image("clear")
+                    
+                    Image("mooneyHappy")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 400, height: 400)
-//                        .padding(.bottom, -50)
-                        .padding(.bottom, 10)
+                        .padding(.bottom, -25)
+//                        .padding(.bottom, 10)
                     
 //                    Text("Let's learn about your")
 //                        .fontWeight(.heavy)
