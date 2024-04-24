@@ -27,17 +27,17 @@ struct QuizResultView: View {
             
             VStack(spacing: 20) {
                
-                if result == "You might be feeling sad." {
+                if result == "You might be feeling sad" {
                     Image("mooneySad")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 400, height: 400)
-                } else if result == "You might be feeling angry." {
+                } else if result == "You might be feeling angry" {
                     Image("mooneyMad")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 400, height: 400)
-                } else if result == "You might be feeling worried." {
+                } else if result == "You might be feeling worried" {
                     Image("mooneyWorried")
                         .resizable()
                         .aspectRatio(contentMode: .fit)

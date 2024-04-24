@@ -31,8 +31,7 @@ struct PageView: View {
                 QuizResultView(result: determineEmotion())
                     .navigationTitle("Quiz Result")
             } else {
-                let shuffledQuestions = questions.shuffled()
-                let currentPage: Quiz = shuffledQuestions[choiceMade]
+                let currentPage: Quiz = questions[questionsAsked]
                 
                 VStack {
                     
@@ -40,7 +39,7 @@ struct PageView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(height: 300)
-                        .padding(.top, 70)
+                        .padding(.top, 50)
                     
                     Text(currentPage.questionText)
                         .font(.system(size: 30, weight: .bold))
@@ -52,8 +51,8 @@ struct PageView: View {
                     ForEach(Array(currentPage.choices.enumerated()), id: \.offset) { index, choice in
                         Button(action: {
                             processQuiz(response: index + 1)
+                            tally[questionsAsked] = index + 1
                             questionsAsked += 1
-                            choiceMade += 1
                             checkQuizEnd()
                         }) {
                             Text(choice)
@@ -75,10 +74,10 @@ struct PageView: View {
     }
     
     func checkQuizEnd() {
-        if questionsAsked >= 5 || tally.values.contains(3) {
-            quizEnded = true
-        }
-    }
+           if questionsAsked >= 5 && tally.values.contains(3) {
+               quizEnded = true
+           }
+       }
 }
 
 struct PageView_Previews: PreviewProvider {

@@ -22,7 +22,7 @@ let questions = [
     Quiz(questionText: "What do you want to do right now?",
          choices: ["I want to throw and break things!", "I want to lay down and be alone.", "I want my grown up to cuddle me and keep me safe."]),
     
-    Quiz(questionText: "If your big feeling controlled the weather, what type of weather would it be?",
+    Quiz(questionText: "What type of weather is your BIG feelings?",
          choices: ["A thunderstorm, all loud and fierce", "A rainy day with clouds and no sunshine", "You couldn't predict my weather - it would be all over the place."]),
     
     Quiz(questionText: "What color would your big feeling be?",
