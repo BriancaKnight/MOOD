@@ -62,6 +62,28 @@ struct QuizResultView: View {
                     .multilineTextAlignment(.center)
                     .background(Color.white.opacity(0.8))
                     .cornerRadius(10)
+                
+                HStack {
+                    NavigationLink(destination: ContentView()) {
+                        Text("Go Home")
+                            .font(.system(size: 22, weight: .bold))
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 10)
+                            .background(Color.white)
+                            .foregroundColor(.purple)
+                            .cornerRadius(10)
+                    }
+                    
+                    NavigationLink(destination: PageView(choiceMade: .constant(0))) {
+                        Text("Retake Quiz")
+                            .font(.system(size: 22, weight: .bold))
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 10)
+                            .background(Color.white)
+                            .foregroundColor(.purple)
+                            .cornerRadius(10)
+                    }
+                }
             }
             .padding()
         }
@@ -69,11 +91,11 @@ struct QuizResultView: View {
     
     func getEmotionAdvice(result: String) -> String {
         switch result {
-            case "You might be feeling sad":
+            case "Feeling Sad?":
                 return "It's okay to feel sad. Try talking to someone you trust or listen to music that makes you feel calm."
-            case "You might be feeling angry":
+            case "Feeling Mad?":
                 return "Anger can be tough to handle. Try taking deep breaths or going for a walk to calm down."
-            case "You might be feeling worried":
+            case "Feeling Worried?":
                 return "Worry can be hard to control. Try writing down your thoughts or talking to someone about them."
             default:
                 return ""
@@ -83,6 +105,6 @@ struct QuizResultView: View {
 
 struct QuizResultView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizResultView(result: "You might be feeling angry")
+        QuizResultView(result: "You might be feeling worried")
     }
 }
