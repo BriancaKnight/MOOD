@@ -12,6 +12,7 @@ struct PageView: View {
     @State private var tally: [Int: Int] = [1: 0, 2: 0, 3: 0]
     @State private var questionsAsked = 0
     @State private var quizEnded = false
+    @State private var shuffledQuestions = questions.shuffled() // Shuffled questions
     
     var body: some View {
         ZStack {
@@ -31,7 +32,7 @@ struct PageView: View {
                 QuizResultView(result: determineEmotion())
                     .navigationTitle("Quiz Result")
             } else {
-                let currentPage: Quiz = questions[questionsAsked]
+                let currentPage: Quiz = shuffledQuestions[questionsAsked]
                 
                 VStack {
                     
@@ -74,10 +75,16 @@ struct PageView: View {
     }
     
     func checkQuizEnd() {
-           if questionsAsked >= 5 && tally.values.contains(3) {
-               quizEnded = true
-           }
-       }
+        if questionsAsked >= 5 {
+            let madTally = tally.values.filter { $0 == 1 }.count
+            let sadTally = tally.values.filter { $0 == 2 }.count
+            let anxiousTally = tally.values.filter { $0 == 3 }.count
+            
+            if madTally >= 3 || sadTally >= 3 || anxiousTally >= 3 {
+                quizEnded = true
+            }
+        }
+    }
 }
 
 struct PageView_Previews: PreviewProvider {
