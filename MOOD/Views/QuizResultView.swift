@@ -1,10 +1,3 @@
-//
-//  QuizResultView.swift
-//  MOOD
-//
-//  Created by Brianca Knight on 4/17/24.
-//
-
 import SwiftUI
 
 struct QuizResultView: View {
@@ -91,11 +84,11 @@ struct QuizResultView: View {
     
     func getEmotionAdvice(result: String) -> String {
         switch result {
-            case "Feeling Sad?":
+            case "You might be feeling sad":
                 return "It's okay to feel sad. Try talking to someone you trust or listen to music that makes you feel calm."
-            case "Feeling Mad?":
+            case "You might be feeling angry":
                 return "Anger can be tough to handle. Try taking deep breaths or going for a walk to calm down."
-            case "Feeling Worried?":
+            case "You might be feeling worried":
                 return "Worry can be hard to control. Try writing down your thoughts or talking to someone about them."
             default:
                 return ""
