@@ -77,3 +77,8 @@ This app aims to teach children how to identify emotions as well as provide sens
 * 7:50: Whiteboarding practice
 * 2:45: Research microphone use in Swift
 * 3:45: Career services meeting and cont research 
+
+
+#### Thursday, April 25th
+
+* 7:50: Whiteboarding practice
