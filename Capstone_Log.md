@@ -82,3 +82,4 @@ This app aims to teach children how to identify emotions as well as provide sens
 #### Thursday, April 25th
 
 * 7:50: Whiteboarding practice
+* 9:30: Interview prep/interview w/ Fill
