@@ -26,6 +26,7 @@
 		D75248312BD1AC2900F867AC /* pur.wav in Resources */ = {isa = PBXBuildFile; fileRef = D752482B2BD1AC2900F867AC /* pur.wav */; };
 		D75248322BD1AC2900F867AC /* rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = D752482C2BD1AC2900F867AC /* rain.wav */; };
 		D75248332BD1AC2900F867AC /* zipper.wav in Resources */ = {isa = PBXBuildFile; fileRef = D752482D2BD1AC2900F867AC /* zipper.wav */; };
+		D76D6D562BDC265B00F69174 /* MoodMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76D6D552BDC265B00F69174 /* MoodMapView.swift */; };
 		D7D13C9A2BD95B0F0021A525 /* MicrophoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D13C992BD95B0F0021A525 /* MicrophoneView.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		D752482B2BD1AC2900F867AC /* pur.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pur.wav; sourceTree = "<group>"; };
 		D752482C2BD1AC2900F867AC /* rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rain.wav; sourceTree = "<group>"; };
 		D752482D2BD1AC2900F867AC /* zipper.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = zipper.wav; sourceTree = "<group>"; };
+		D76D6D552BDC265B00F69174 /* MoodMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodMapView.swift; sourceTree = "<group>"; };
 		D7D13C992BD95B0F0021A525 /* MicrophoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 				D70CECC32BD06596006CA8AC /* QuizResultView.swift */,
 				D75248252BD187E700F867AC /* AudioGameView.swift */,
 				D71BE5F72BD3295900115D77 /* ParentView.swift */,
+				D76D6D552BDC265B00F69174 /* MoodMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D76D6D562BDC265B00F69174 /* MoodMapView.swift in Sources */,
 				D71BE5F82BD3295900115D77 /* ParentView.swift in Sources */,
 				D70CEC922BD04368006CA8AC /* ContentView.swift in Sources */,
 				D7D13C9A2BD95B0F0021A525 /* MicrophoneView.swift in Sources */,
