@@ -43,7 +43,7 @@ struct MoodMapView: View {
     
     var body: some View {
             ZStack {
-                // First, let's add the gradient background
+    
                 LinearGradient(
                     gradient: Gradient(stops: [
                         Gradient.Stop(color: Color(red: 0.99, green: 0.40, blue: 0.61), location: 0.0),
@@ -55,25 +55,25 @@ struct MoodMapView: View {
                     endPoint: .bottomTrailing
                 )
                 .ignoresSafeArea()
+                  
                 
-                // Next, let's add the slithery path behind the mood icons
                 Path { path in
-                    // Define the start and end points of the slithery line
+                 
                     let startPoint = CGPoint(x: 0, y: 0)
                     let endPoint = CGPoint(x: UIScreen.main.bounds.width, y: UIScreen.main.bounds.height)
                     
-                    // Define the control point to create a slithery shape with one curve
-                    let controlPoint = CGPoint(x: UIScreen.main.bounds.width * 0.6, y: UIScreen.main.bounds.height * 0.8)
+                    let controlPoint1 = CGPoint(x: UIScreen.main.bounds.width * 0.1, y: UIScreen.main.bounds.height * 0.9)
+                    let controlPoint2 = CGPoint(x: UIScreen.main.bounds.width * 0.9, y: UIScreen.main.bounds.height * 0.1)
                     
-                    // Move to the start point of the path
+                    
                     path.move(to: startPoint)
-                    
-                    // Add curve to create the slithery shape
-                    path.addQuadCurve(to: endPoint, control: controlPoint)
+                  
+                    path.addCurve(to: endPoint, control1: controlPoint1, control2: controlPoint2)
                 }
-                .stroke(style: StrokeStyle(lineWidth: 5, lineCap: .round, lineJoin: .round)) // Increased line width
+                
+                .stroke(style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round)) // Increased line width
                 .foregroundColor(Color.white.opacity(0.7))
-                .offset(y: 20) // Adjust the offset to position the line behind the mood icons
+                .offset(y: 20)
                 
                 VStack(spacing: 20) {
                     Text("Mooney's Mood Map")
