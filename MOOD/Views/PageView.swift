@@ -41,6 +41,7 @@ struct PageView: View {
                         .scaledToFit()
                         .frame(height: 300)
                         .padding(.top, 50)
+                        .padding(.bottom, -30) 
                     
                     Text(currentPage.questionText)
                         .font(.system(size: 30, weight: .bold))

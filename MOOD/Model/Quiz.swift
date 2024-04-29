@@ -54,11 +54,11 @@ func determineEmotion() -> String {
     if let emotion = tally.first(where: { $0.value == maxTally }) {
         switch emotion.key {
             case 1:
-                return "You might be feeling angry"
+                return "Feeling angry?"
             case 2:
-                return "You might be feeling sad"
+                return "Feeling sad?"
             case 3:
-                return "You might be feeling worried"
+                return "Feeling worried?"
             default:
                 return "Invalid Response."
         }

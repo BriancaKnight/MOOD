@@ -20,17 +20,17 @@ struct QuizResultView: View {
             
             VStack(spacing: 20) {
                
-                if result == "You might be feeling sad" {
+                if result == "Feeling sad?" {
                     Image("mooneySad")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 400, height: 400)
-                } else if result == "You might be feeling angry" {
+                } else if result == "Feeling angry?" {
                     Image("mooneyMad")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 400, height: 400)
-                } else if result == "You might be feeling worried" {
+                } else if result == "Feeling worried?" {
                     Image("mooneyWorried")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -57,15 +57,6 @@ struct QuizResultView: View {
                     .cornerRadius(10)
                 
                 HStack {
-                    NavigationLink(destination: ContentView()) {
-                        Text("Go Home")
-                            .font(.system(size: 22, weight: .bold))
-                            .padding(.horizontal, 20)
-                            .padding(.vertical, 10)
-                            .background(Color.white)
-                            .foregroundColor(.purple)
-                            .cornerRadius(10)
-                    }
                     
                     NavigationLink(destination: PageView(choiceMade: .constant(0))) {
                         Text("Retake Quiz")
@@ -84,11 +75,11 @@ struct QuizResultView: View {
     
     func getEmotionAdvice(result: String) -> String {
         switch result {
-            case "You might be feeling sad":
+            case "Feeling sad?":
                 return "It's okay to feel sad. Try talking to someone you trust or listen to music that makes you feel calm."
-            case "You might be feeling angry":
+            case "Feeling angry?":
                 return "Anger can be tough to handle. Try taking deep breaths or going for a walk to calm down."
-            case "You might be feeling worried":
+            case "Feeling worried?":
                 return "Worry can be hard to control. Try writing down your thoughts or talking to someone about them."
             default:
                 return ""
@@ -98,6 +89,6 @@ struct QuizResultView: View {
 
 struct QuizResultView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizResultView(result: "You might be feeling worried")
+        QuizResultView(result: "Feeling worried?")
     }
 }

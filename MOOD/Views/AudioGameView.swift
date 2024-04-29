@@ -54,6 +54,7 @@ struct AudioGameView: View {
                     .scaledToFit()
                     .frame(height: 300)
                     .padding(.top, 70)
+                    .padding(.bottom, -25)
                 
                 Button("Play Sound") {
                     playSound()
