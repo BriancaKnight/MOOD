@@ -54,34 +54,41 @@ struct MoodMapView: View {
                 Text("Mooney's Moods")
                     .font(.system(size: 36, weight: .bold))
                     .foregroundColor(Color.white)
-                    .padding(.top, 20)
-                    .padding(.bottom, 10)
+                    .padding(.top, 30)
+                    .padding(.bottom, -10)
                     .shadow(color: Color.black, radius: 2, x: 0, y: 0)
                     .multilineTextAlignment(.center)
                     .lineLimit(nil)
                 
-                Text("Click a BIG feeling to learn Mooney's feelings!")
+                Text("Click a BIG feeling to learn more!")
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.white)
                     .shadow(color: Color.black, radius: 1, x: 0, y: 0)
-                    .padding(.bottom, 20)
                     .multilineTextAlignment(.center)
                 
                 ForEach(map, id: \.title) { mood in
-                    HStack {
-                        Image(mood.pic)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 100, height: 100)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(Color.purple.opacity(0.5))
+                            .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 2)
                         
-                        Text(mood.title)
-                            .font(.system(size: 20, weight: .bold))
-                            .foregroundColor(.white)
-                            .shadow(color: Color.black, radius: 1, x: 0, y: 0)
-                            .multilineTextAlignment(.center)
-                            .padding(.leading, 10)
-                        
-                        Spacer()
+                        HStack {
+                            Image(mood.pic)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 90, height: 90)
+                            
+                            Spacer() 
+                            
+                            Text(mood.title)
+                                .font(.system(size: 24, weight: .bold))
+                                .foregroundColor(.white)
+                                .shadow(color: Color.black, radius: 1, x: 0, y: 0)
+                                .multilineTextAlignment(.center)
+                            
+                            Spacer()
+                        }
+                        .padding(.horizontal, 20)
                     }
                     .padding(.horizontal, 20)
                 }
