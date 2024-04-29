@@ -88,3 +88,4 @@ This app aims to teach children how to identify emotions as well as provide sens
 
 #### Monday, April 29th
 * 8:00: Whiteboarding practice
+* 4:00: Research hosting MOOD on app store
