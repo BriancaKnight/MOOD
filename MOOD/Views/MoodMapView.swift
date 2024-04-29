@@ -56,27 +56,70 @@ struct MoodMapView: View {
             .ignoresSafeArea()
             
             VStack {
-                ForEach(0..<3) { row in
-                    HStack {
-                        ForEach(0..<3) { column in
-                            let index = row * 3 + column
+                Text("Mooney's Mood Map")
+                    .font(.system(size: 38, weight: .bold))
+                    .foregroundColor(Color.white)
+                    .padding([.leading, .trailing], 10)
+                    .padding(.bottom, 5)
+                    .shadow(color: Color.black, radius: 2, x: 0, y: 0)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(nil)
+                    .frame(maxWidth: .infinity)
+                
+                Text("Click a BIG feeling to learn Mooney's feelings!")
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.white)
+                    .shadow(color: Color.black, radius: 1, x: 0, y: 0)
+                    .padding(.bottom, 20)
+                    .multilineTextAlignment(.center)
+                
+                HStack(spacing: 50) {
+                    VStack {
+                        ForEach(0..<3) { row in
+                            let index = row
                             if index < map.count {
                                 VStack {
                                     Image(map[index].pic)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 80, height: 80)
+                                        .frame(width: 100, height: 100)
+                                        .padding(.bottom, 15)
+                                        .offset(y: -35) // Adjust offset here
                                     Text(map[index].title)
+                                        .font(.system(size: 20, weight: .bold))
                                         .foregroundColor(.white)
-                                        .font(.caption)
+                                        .shadow(color: Color.black, radius: 1, x: 0, y: 0)
                                         .multilineTextAlignment(.center)
+                                        .offset(y: -55)
+                                }
+                            }
+                        }
+                    }
+                    
+                    VStack {
+                        ForEach(0..<3) { row in
+                            let index = 3 + row
+                            if index < map.count {
+                                VStack {
+                                    Image(map[index].pic)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 100, height: 100)
+                                        .padding(.bottom, 15)
+                                        .offset(y: 35)
+                                    Text(map[index].title)
+                                        .font(.system(size: 20, weight: .bold))
+                                        .foregroundColor(.white)
+                                        .shadow(color: Color.black, radius: 1, x: 0, y: 0)
+                                        .multilineTextAlignment(.center)
+                                        .offset(y: 15) 
                                 }
                             }
                         }
                     }
                 }
+                .padding()
             }
-            .padding()
         }
     }
 }
