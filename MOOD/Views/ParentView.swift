@@ -38,6 +38,20 @@ struct ParentView: View {
                         .padding([.leading, .trailing], 10)
                         .padding(.bottom, 8)
                     
+                    Text("Mooney's Moods")
+                        .font(.system(size: 38, weight: .bold))
+                        .foregroundColor(.white)
+                        .padding([.leading, .trailing], 10)
+                        .padding(.vertical, 8)
+                        .shadow(color: Color.black, radius: 3, x: 0, y: 0)
+                        .background(Color.purple.cornerRadius(10))
+                    
+                    Text("Mooney's Moods serves as a feelings glossary, using our mascot Mooney as an example to help children understand and navigate their emotions. By providing relatable scenarios and experiences, children can identify with Mooney and learn how to manage their own feelings.")
+                        .font(.body)
+                        .foregroundColor(.black)
+                        .padding([.leading, .trailing], 10)
+                        .padding(.bottom, 8)
+                    
                     Text("BIG Feelings Quiz")
                         .font(.system(size: 38, weight: .bold))
                         .foregroundColor(.white)
