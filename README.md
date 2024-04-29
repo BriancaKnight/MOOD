@@ -63,4 +63,4 @@ MIT License, see License.md for details
 ## Screenshots
 ![Quiz page for MOOD](./MOOD/Assets.xcassets/quiz.imageset/quiz.png)
 ![Moods page for MOOD](./MOOD/Assets.xcassets/moods.imageset/moods.png)
-![Audio quiz for MOOD](./MOOD/Assets.xcassets/Audio.imageset/Audio.png)
+![Audio quiz for MOOD](./MOOD/Assets.xcassets/audioQuiz.imageset/audioQuiz.png)
