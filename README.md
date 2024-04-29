@@ -1,7 +1,6 @@
 # MOOD
 ## An emotional regulation app for children & their grown-ups
 ### By Brianca Knight 
-(https://github.com/BriancaKnight)
 
 ![Home Page for MOOD](./MOOD/Assets.xcassets/home.imageset/home.png)
 
