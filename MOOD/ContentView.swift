@@ -29,7 +29,7 @@ struct ContentView: View {
                     Image("logo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 400)
+                        .frame(width: 380)
                         .padding(.bottom, -30)
                 
                     Spacer()
@@ -38,21 +38,32 @@ struct ContentView: View {
                     Image("mooneyHappy")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 400, height: 400)
+                        .frame(width: 380, height: 400)
                         .padding(.bottom, -25)
                     
+                    NavigationLink(destination: MoodMapView()) {
+                        Text("Mooney's Moods")
+                            .font(.system(size: 22, weight: .bold))
+                            .shadow(color: Color.black, radius: 1, x: 0, y: 0)
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 10)
+                    }
+                    .buttonStyle(.borderedProminent)
                     
                     NavigationLink(destination: PageView(choiceMade: .constant(0))) {
                         Text("BIG Feelings Quiz")
                             .font(.system(size: 22, weight: .bold))
+                            .shadow(color: Color.black, radius: 1, x: 0, y: 0)
                             .padding(.horizontal, 20)
                             .padding(.vertical, 10)
                            
                     }
                     .buttonStyle(.borderedProminent)
+                    
                     NavigationLink(destination: AudioGameView()) {
                         Text("Audio Adventure Game")
                             .font(.system(size: 22, weight: .bold))
+                            .shadow(color: Color.black, radius: 1, x: 0, y: 0)
                             .padding(.horizontal, 20)
                             .padding(.vertical, 10)
                     }
@@ -71,6 +82,8 @@ struct ContentView: View {
         }
     }
 }
+
+
 #Preview {
     ContentView()
 }
