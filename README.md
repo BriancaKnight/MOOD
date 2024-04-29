@@ -45,7 +45,7 @@ To view or edit this code, you will need to download apple's code editor Xcode.
 4. On your local computer, create a working directory of your choice.
 5. In this new directory, via the terminal, type `$ git clone https://github.com/BriancaKnight/MOOD`.
 6. Open Xcode and select opening MOOD from the available projects. 
-7. View this project by using the built-in preview in Xcode. 
+7. View this project by using the built-in preview in Xcode from the ContentView file. 
 
 
 ## Known Bugs
@@ -63,4 +63,4 @@ MIT License, see License.md for details
 ## Screenshots
 ![Quiz page for MOOD](./MOOD/Assets.xcassets/quiz.imageset/quiz.png)
 ![Moods page for MOOD](./MOOD/Assets.xcassets/moods.imageset/moods.png)
-![Audio quiz for MOOD](./MOOD/Assets.xcassets/audio.imageset/audio.png)
+![Audio quiz for MOOD](./MOOD/Assets.xcassets/Audio.imageset/Audio.png)
