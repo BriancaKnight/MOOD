@@ -42,63 +42,47 @@ struct MoodMapView: View {
     ]
     
     var body: some View {
-            ZStack {
-    
-                LinearGradient(
-                    gradient: Gradient(stops: [
-                        Gradient.Stop(color: Color(red: 0.99, green: 0.40, blue: 0.61), location: 0.0),
-                        Gradient.Stop(color: Color(red: 0.70, green: 0.47, blue: 1.0), location: 0.33),
-                        Gradient.Stop(color: Color(red: 0.40, green: 0.94, blue: 0.99), location: 0.66),
-                        Gradient.Stop(color: Color(red: 0.60, green: 0.94, blue: 0.36), location: 1.0)
-                    ]),
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-                .ignoresSafeArea()
-                  
-                
-                Path { path in
-                 
-                    let startPoint = CGPoint(x: 0, y: 0)
-                    let endPoint = CGPoint(x: UIScreen.main.bounds.width, y: UIScreen.main.bounds.height)
-                    
-                    let controlPoint1 = CGPoint(x: UIScreen.main.bounds.width * 0.1, y: UIScreen.main.bounds.height * 0.9)
-                    let controlPoint2 = CGPoint(x: UIScreen.main.bounds.width * 0.9, y: UIScreen.main.bounds.height * 0.1)
-                    
-                    
-                    path.move(to: startPoint)
-                  
-                    path.addCurve(to: endPoint, control1: controlPoint1, control2: controlPoint2)
-                }
-                
-                .stroke(style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round)) // Increased line width
-                .foregroundColor(Color.white.opacity(0.7))
-                .offset(y: 20)
-                
-                VStack(spacing: 20) {
-                    Text("Mooney's Mood Map")
-                        .font(.system(size:36, weight: .bold))
-                        .foregroundColor(.white)
-                        .padding(.top, 20)
-                    
-                    ForEach(map, id: \.title) { mood in
-                        VStack {
-                            Image(mood.pic)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                            Text(mood.title)
-                                .foregroundColor(.white)
-                                .font(.title)
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(stops: [
+                    Gradient.Stop(color: Color(red: 0.99, green: 0.40, blue: 0.61), location: 0.0),
+                    Gradient.Stop(color: Color(red: 0.70, green: 0.47, blue: 1.0), location: 0.33),
+                    Gradient.Stop(color: Color(red: 0.40, green: 0.94, blue: 0.99), location: 0.66),
+                    Gradient.Stop(color: Color(red: 0.60, green: 0.94, blue: 0.36), location: 1.0)
+                ]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+            
+            VStack {
+                ForEach(0..<3) { row in
+                    HStack {
+                        ForEach(0..<3) { column in
+                            let index = row * 3 + column
+                            if index < map.count {
+                                VStack {
+                                    Image(map[index].pic)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 80, height: 80)
+                                    Text(map[index].title)
+                                        .foregroundColor(.white)
+                                        .font(.caption)
+                                        .multilineTextAlignment(.center)
+                                }
+                            }
                         }
                     }
                 }
-                .padding()
             }
+            .padding()
         }
     }
+}
 
-    struct MoodMapView_Previews: PreviewProvider {
-        static var previews: some View {
-            MoodMapView()
-        }
+struct MoodMapView_Previews: PreviewProvider {
+    static var previews: some View {
+        MoodMapView()
     }
+}
