@@ -101,7 +101,7 @@ struct AudioGameView: View {
                 }
                 
                 .padding(.bottom, 120)
-                .padding([.leading, .trailing])
+                .padding([.leading, .trailing], 20)
             }
             .padding([.top, .bottom], 20)
             
@@ -181,20 +181,13 @@ struct AudioGameView: View {
                         .background(Color.purple)
                         .foregroundColor(.white)
                         .cornerRadius(10)
-                        
-                        NavigationLink(destination: ContentView()) {
-                            Text("No thanks, take me home")
-                                .padding()
-                                .background(Color.purple)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        }
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
+            
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                        isGameFinished = true
+                        isGameFinished = false
                     }
                 }
             }
@@ -259,6 +252,9 @@ struct AudioGameView: View {
     func restartGame() {
         currentPromptIndex = 0
         isGameFinished = false
+        showFeedback = false // Reset feedback state
+        feedbackMessage = "" // Reset feedback message
+        choiceIsCorrect = false // Reset choice correctness
     }
 }
 
