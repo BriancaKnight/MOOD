@@ -60,5 +60,6 @@ To view or edit this code, you will need to download apple's code editor Xcode.
 ## License
 MIT License, see License.md for details
 
-![Quiz page for MOOD](./MOOD/Assets.xcassets/quiz.imageset/quiz.png)![Moods page for MOOD](./MOOD/Assets.xcassets/moods.imageset/moods.png)
-
+![Quiz page for MOOD](./MOOD/Assets.xcassets/quiz.imageset/quiz.png)
+![Moods page for MOOD](./MOOD/Assets.xcassets/moods.imageset/moods.png)
+![Audio quiz for MOOD](./MOOD/Assets.xcassets/audio.imageset/audio.png)
