@@ -85,3 +85,6 @@ This app aims to teach children how to identify emotions as well as provide sens
 * 9:30: Interview prep/interview w/ Fill
 * 10:50: Finish inteview and travel to epicodus
 * 11:30: Arrive to epicodus 
+
+#### Monday, April 29th
+* 8:00: Whiteboarding practice
