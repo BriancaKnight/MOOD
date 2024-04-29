@@ -4,8 +4,7 @@
 (https://github.com/BriancaKnight)
 
 ![Home Page for MOOD](./MOOD/Assets.xcassets/home.imageset/home.png)
-![Quiz page for MOOD](./MOOD/Assets.xcassets/quiz.imageset/quiz.png)
-![Moods page for MOOD](./MOOD/Assets.xcassets/moods.imageset/moods.png)
+
 
 ---
 ### <u>Jump to section</u>
@@ -61,4 +60,5 @@ To view or edit this code, you will need to download apple's code editor Xcode.
 ## License
 MIT License, see License.md for details
 
+![Quiz page for MOOD](./MOOD/Assets.xcassets/quiz.imageset/quiz.png)![Moods page for MOOD](./MOOD/Assets.xcassets/moods.imageset/moods.png)
 
