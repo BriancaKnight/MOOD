@@ -32,69 +32,74 @@ struct MoodMapView: View {
         ),
         Mood(title: "Disappointed",
              pic: "mooneyWrong",
-             paragraph: "Mooney feels a bit disappointed. It's like her shoulders droop down like a sad puppy, and her tummy feels all twisty, like a rollercoaster going the wrong way. When Mooney feels disappointed, she knows it's okay to feel that way, and she tries to think of something fun to cheer herself up."
+             paragraph: "Mooney feels a bit disappointed. It's like her shoulders droop down like a sad puppy, and her tummy feels all twisty, like a rollercoaster going the wrong way. When Mooney feels  that way she tries to think of something fun to cheer herself up."
         ),
     ]
     
     var body: some View {
-        ZStack {
-            LinearGradient(
-                gradient: Gradient(stops: [
-                    Gradient.Stop(color: Color(red: 0.99, green: 0.40, blue: 0.61), location: 0.0),
-                    Gradient.Stop(color: Color(red: 0.70, green: 0.47, blue: 1.0), location: 0.33),
-                    Gradient.Stop(color: Color(red: 0.40, green: 0.94, blue: 0.99), location: 0.66),
-                    Gradient.Stop(color: Color(red: 0.60, green: 0.94, blue: 0.36), location: 1.0)
-                ]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
-            
-            VStack(spacing: 20) {
-                Text("Mooney's Moods")
-                    .font(.system(size: 36, weight: .bold))
-                    .foregroundColor(Color.white)
-                    .padding(.top, 30)
-                    .padding(.bottom, -10)
-                    .shadow(color: Color.black, radius: 2, x: 0, y: 0)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(nil)
+        NavigationView {
+            ZStack {
+                LinearGradient(
+                    gradient: Gradient(stops: [
+                        Gradient.Stop(color: Color(red: 0.99, green: 0.40, blue: 0.61), location: 0.0),
+                        Gradient.Stop(color: Color(red: 0.70, green: 0.47, blue: 1.0), location: 0.33),
+                        Gradient.Stop(color: Color(red: 0.40, green: 0.94, blue: 0.99), location: 0.66),
+                        Gradient.Stop(color: Color(red: 0.60, green: 0.94, blue: 0.36), location: 1.0)
+                    ]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea()
                 
-                Text("Click a BIG feeling to learn more!")
-                    .font(.system(size: 20, weight: .bold))
-                    .foregroundColor(.white)
-                    .shadow(color: Color.black, radius: 1, x: 0, y: 0)
-                    .multilineTextAlignment(.center)
-                
-                ForEach(map, id: \.title) { mood in
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 15)
-                            .fill(Color.purple.opacity(0.5))
-                            .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 2)
-                        
-                        HStack {
-                            Image(mood.pic)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 90, height: 90)
-                            
-                            Spacer() 
-                            
-                            Text(mood.title)
-                                .font(.system(size: 24, weight: .bold))
-                                .foregroundColor(.white)
-                                .shadow(color: Color.black, radius: 1, x: 0, y: 0)
-                                .multilineTextAlignment(.center)
-                            
-                            Spacer()
+                VStack(spacing: 20) {
+                    Text("Mooney's Moods")
+                        .font(.system(size: 36, weight: .bold))
+                        .foregroundColor(Color.white)
+                        .padding(.top, 30)
+                        .padding(.bottom, -10)
+                        .shadow(color: Color.black, radius: 2, x: 0, y: 0)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+                    
+                    Text("Click a BIG feeling to learn more!")
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(.white)
+                        .shadow(color: Color.black, radius: 1, x: 0, y: 0)
+                        .multilineTextAlignment(.center)
+                    
+                    ForEach(map, id: \.title) { mood in
+                        NavigationLink(destination: MoodDetailsView(mood: mood)) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 15)
+                                    .fill(Color.purple.opacity(0.5))
+                                    .shadow(color: Color.black.opacity(0.5), radius: 5, x: 0, y: 2)
+                                
+                                HStack {
+                                    Image(mood.pic)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 90, height: 90)
+                                    
+                                    Spacer()
+                                    
+                                    Text(mood.title)
+                                        .font(.system(size: 24, weight: .bold))
+                                        .foregroundColor(.white)
+                                        .shadow(color: Color.black, radius: 1, x: 0, y: 0)
+                                        .multilineTextAlignment(.center)
+                                    
+                                    Spacer()
+                                }
+                                .padding(.horizontal, 20)
+                            }
+                            .padding(.horizontal, 20)
                         }
-                        .padding(.horizontal, 20)
                     }
-                    .padding(.horizontal, 20)
+                    
+                    Spacer()
                 }
-                
-                Spacer()
             }
+            .navigationBarHidden(true) // Hide the navigation bar
         }
     }
 }

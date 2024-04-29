@@ -50,6 +50,6 @@ let map = [
     
     Mood(title: "Disappointed",
          pic: "mooneyWrong",
-         paragraph: "Mooney feels a bit disappointed. It's like her shoulders droop down like a sad puppy, and her tummy feels all twisty, like a rollercoaster going the wrong way. When Mooney feels disappointed, she knows it's okay to feel that way, and she tries to think of something fun to cheer herself up."
+         paragraph: "Mooney feels a bit disappointed. It's like her shoulders droop down like a sad puppy, and her tummy feels all twisty, like a rollercoaster going the wrong way. When Mooney feels  that way she tries to think of something fun to cheer herself up."
     ),
 ]
