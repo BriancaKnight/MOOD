@@ -67,6 +67,7 @@
 		D71BE5F72BD3295900115D77 /* ParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentView.swift; sourceTree = "<group>"; };
 		D73DA4812BDAB23E00550529 /* MoodMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodMap.swift; sourceTree = "<group>"; };
 		D74FDF9D2BE031AB0095DCCC /* MoodDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDetailsView.swift; sourceTree = "<group>"; };
+		D74FDFA02BE05A3C0095DCCC /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		D75248252BD187E700F867AC /* AudioGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioGameView.swift; sourceTree = "<group>"; };
 		D75248272BD18A8900F867AC /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		D75248292BD1AC2900F867AC /* bird.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bird.wav; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				D70CECBB2BD04622006CA8AC /* Capstone_Log.md */,
+				D74FDFA02BE05A3C0095DCCC /* LICENSE.md */,
 				D70CECBA2BD04612006CA8AC /* Capstone_Proposal.md */,
 				D70CECB92BD045F7006CA8AC /* README.md */,
 				D70CEC8E2BD04368006CA8AC /* MOOD */,
