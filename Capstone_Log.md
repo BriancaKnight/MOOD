@@ -93,4 +93,4 @@ This app aims to teach children how to identify emotions as well as provide sens
 
 #### Tuesday, April 30th
 
-* Whitteboarding
+* Whiteboarding
