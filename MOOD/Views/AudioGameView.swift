@@ -11,19 +11,19 @@ import AVFoundation
 struct AudioGameView: View {
     let prompts: [Audio] = [
         Audio(promptText: "What do you hear?",
-             choices: ["birds tweeting", "choo choo trains", "kids playing", "beads falling on the floor"]),
+            choices: ["birds tweeting", "choo choo trains", "kids playing", "beads falling on the floor"]),
         
         Audio(promptText: "Open your ears!",
-             choices: ["peaceful raindrops", "cooking in the kitchen", "baloons popping", "footsteps on gravel"]),
+            choices: ["peaceful raindrops", "cooking in the kitchen", "baloons popping", "footsteps on gravel"]),
         
         Audio(promptText: "Hmmm...",
-             choices: ["purring kittens", "coins jinggling", "rollercoaster rides", "dogs barking"]),
+            choices: ["purring kittens", "coins jinggling", "rollercoaster rides", "dogs barking"]),
         
         Audio(promptText: "Use your ears!",
-             choices: ["waves crashing", "crashing bowling pins", "cows mooing", "horns honking"]),
+            choices: ["waves crashing", "crashing bowling pins", "cows mooing", "horns honking"]),
         
         Audio(promptText: "Listen closely...",
-             choices: ["zippers zipping", "munching carrots", "eggs being cracked", "bees buzzing"]),
+            choices: ["zippers zipping", "munching carrots", "eggs being cracked", "bees buzzing"]),
     ]
     
     @State private var currentPromptIndex = 0
@@ -53,7 +53,7 @@ struct AudioGameView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(height: 300)
-                    .padding(.top, 70)
+                    .padding(.top, 100)
                     .padding(.bottom, -25)
                 
                 Button("Play Sound") {
@@ -89,7 +89,7 @@ struct AudioGameView: View {
                         }) {
                             Text(prompts[currentPromptIndex].choices[index])
                                 .padding()
-                                .frame(width: 160, height: 160)
+                                .frame(width: 160, height: 120)
                                 .font(.system(size: 20, weight: .bold))
                                 .multilineTextAlignment(.center)
                                 .lineLimit(2)
@@ -100,7 +100,7 @@ struct AudioGameView: View {
                     }
                 }
                 
-                .padding(.bottom, 120)
+                .padding(.bottom, 90)
                 .padding([.leading, .trailing], 20)
             }
             .padding([.top, .bottom], 20)
@@ -184,7 +184,7 @@ struct AudioGameView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-            
+                
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                         isGameFinished = false
@@ -252,9 +252,9 @@ struct AudioGameView: View {
     func restartGame() {
         currentPromptIndex = 0
         isGameFinished = false
-        showFeedback = false // Reset feedback state
-        feedbackMessage = "" // Reset feedback message
-        choiceIsCorrect = false // Reset choice correctness
+        showFeedback = false
+        feedbackMessage = ""
+        choiceIsCorrect = false
     }
 }
 

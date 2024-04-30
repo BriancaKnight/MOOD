@@ -12,7 +12,7 @@ struct PageView: View {
     @State private var tally: [Int: Int] = [1: 0, 2: 0, 3: 0]
     @State private var questionsAsked = 0
     @State private var quizEnded = false
-    @State private var shuffledQuestions = questions.shuffled() // Shuffled questions
+    @State private var shuffledQuestions = questions.shuffled()
     
     var body: some View {
         ZStack {
@@ -70,7 +70,6 @@ struct PageView: View {
                     
                     Spacer()
                 }
-                .navigationTitle("Quiz")
             }
         }
     }

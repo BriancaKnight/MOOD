@@ -54,7 +54,7 @@ struct ContentView: View {
                     Image("mooneyHappy")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 380, height: 400)
+                        .frame(width: 380, height: 380)
                         .padding(.bottom, -25)
                     
                     NavigationLink(destination: MoodMapView()) {
