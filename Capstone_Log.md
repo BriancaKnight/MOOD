@@ -87,5 +87,10 @@ This app aims to teach children how to identify emotions as well as provide sens
 * 11:30: Arrive to epicodus 
 
 #### Monday, April 29th
+
 * 8:00: Whiteboarding practice
 * 4:00: Research hosting MOOD on app store
+
+#### Tuesday, April 30th
+
+* Whitteboarding
