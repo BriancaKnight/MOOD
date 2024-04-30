@@ -99,7 +99,7 @@ struct MoodMapView: View {
                     Spacer()
                 }
             }
-            .navigationBarHidden(true) // Hide the navigation bar
+            .navigationBarHidden(true) 
         }
     }
 }
