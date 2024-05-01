@@ -61,6 +61,6 @@ To view or edit this code, you will need to download apple's code editor Xcode.
 MIT License, see License.md for details
 
 ## Screenshots
-![Quiz page for MOOD](./MOOD/Assets.xcassets/quizScreenshot.imageset/quiz.png)
-![Moods page for MOOD](./MOOD/Assets.xcassets/mapScreenshot.imageset/moods.png)
-![Audio quiz for MOOD](./MOOD/Assets.xcassets/audioScreenshot.imageset/audioQuiz.png)
+![Quiz page for MOOD](./MOOD/Assets.xcassets/quizScreenshot.imageset/quizScreenshot.png)
+![Moods page for MOOD](./MOOD/Assets.xcassets/mapScreenshot.imageset/mapScreenshot.png)
+![Audio quiz for MOOD](./MOOD/Assets.xcassets/audioScreenshot.imageset/audioScreenshot.png)
