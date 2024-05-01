@@ -106,3 +106,4 @@ This app aims to teach children how to identify emotions as well as provide sens
 * 7:45: Debug preivew not showing on Xcode
 * 10:30: WIP deploy to test flight
 * 1:00: CONT test flight
+* 2:30: Test flight troubleshooting
