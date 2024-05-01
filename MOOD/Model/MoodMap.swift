@@ -43,9 +43,9 @@ let map = [
          paragraph: "Mooney is feeling a bit worried. It's like there's a fluttering butterfly in her tummy, and her throat feels a bit tight, like there's a little frog sitting there. When Mooney feels worried, she talks to someone she trusts, like a grown-up or a friend, to help her feel better."
     ),
     
-    Mood(title: "Surprised",
+    Mood(title: "Excited",
          pic: "mooneyRight",
-         paragraph: "Mooney is so surprised! Her eyes get really big, like saucers, and her mouth opens wide like a big 'O'. It feels like her whole body is buzzing with excitement, like she just won a special prize. When Mooney feels surprised, she loves to share the fun surprise with her friends and family."
+         paragraph: "Mooney is feeling super excited! She's jumping up and down with joy, and her eyes sparkle with happiness. It's like she's ready for the best day ever! When Mooney feels excited, she loves to share her excitement by giggling and laughing with her friends and family."
     ),
     
     Mood(title: "Disappointed",
