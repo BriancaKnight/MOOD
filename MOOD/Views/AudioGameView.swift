@@ -11,19 +11,19 @@ import AVFoundation
 struct AudioGameView: View {
     let prompts: [Audio] = [
         Audio(promptText: "What do you hear?",
-            choices: ["birds tweeting", "choo choo trains", "kids playing", "beads falling on the floor"]),
+              choices: ["birds tweeting", "choo choo trains", "kids playing", "beads falling on the floor"]),
         
         Audio(promptText: "Open your ears!",
-            choices: ["peaceful raindrops", "cooking in the kitchen", "baloons popping", "footsteps on gravel"]),
+              choices: ["peaceful raindrops", "cooking in the kitchen", "balloons popping", "footsteps on gravel"]),
         
         Audio(promptText: "Hmmm...",
-            choices: ["purring kittens", "coins jinggling", "rollercoaster rides", "dogs barking"]),
+              choices: ["purring kittens", "coins jingling", "rollercoaster rides", "dogs barking"]),
         
         Audio(promptText: "Use your ears!",
-            choices: ["waves crashing", "crashing bowling pins", "cows mooing", "horns honking"]),
+              choices: ["waves crashing", "crashing bowling pins", "cows mooing", "horns honking"]),
         
         Audio(promptText: "Listen closely...",
-            choices: ["zippers zipping", "munching carrots", "eggs being cracked", "bees buzzing"]),
+              choices: ["zippers zipping", "munching carrots", "eggs being cracked", "bees buzzing"]),
     ]
     
     @State private var currentPromptIndex = 0
@@ -83,11 +83,11 @@ struct AudioGameView: View {
                 
                 
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 2), spacing: 20) {
-                    ForEach(0..<prompts[currentPromptIndex].choices.count, id: \.self) { index in
+                    ForEach(shuffledChoices(), id: \.self) { choice in
                         Button(action: {
-                            handleChoiceSelection(choiceIndex: index)
+                            handleChoiceSelection(choice: choice)
                         }) {
-                            Text(prompts[currentPromptIndex].choices[index])
+                            Text(choice)
                                 .padding()
                                 .frame(width: 160, height: 120)
                                 .font(.system(size: 20, weight: .bold))
@@ -223,16 +223,14 @@ struct AudioGameView: View {
         }
     }
     
-//    Fix logic starting here
-    
-    func handleChoiceSelection(choiceIndex: Int) {
-        let correctChoiceIndex = 0
-        if choiceIndex == correctChoiceIndex {
+    func handleChoiceSelection(choice: String) {
+        let correctChoice = prompts[currentPromptIndex].choices[0]
+        if choice == correctChoice {
             choiceIsCorrect = true
-            feedbackMessage = "Yes! You got it! It was " + prompts[currentPromptIndex].choices[correctChoiceIndex] + "!"
+            feedbackMessage = "Yes! You got it! It was \(correctChoice)!"
         } else {
             choiceIsCorrect = false
-            feedbackMessage = "Oops! Not this time! It was " + prompts[currentPromptIndex].choices[correctChoiceIndex] + "!"
+            feedbackMessage = "Oops! Not this time! It was \(correctChoice)!"
         }
         showFeedback = true
         
@@ -242,8 +240,6 @@ struct AudioGameView: View {
             }
         }
     }
-    
-    //    Fix logic ending here
     
     func moveToNextPrompt() {
         audioPlayer?.stop()
@@ -259,6 +255,12 @@ struct AudioGameView: View {
         showFeedback = false
         feedbackMessage = ""
         choiceIsCorrect = false
+    }
+    
+    func shuffledChoices() -> [String] {
+        var choices = prompts[currentPromptIndex].choices
+        choices.shuffle()
+        return choices
     }
 }
 
