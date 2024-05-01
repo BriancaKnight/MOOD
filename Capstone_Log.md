@@ -103,3 +103,4 @@ This app aims to teach children how to identify emotions as well as provide sens
 #### Wednesday, May 1st
 
 * 7:00: Whiteboarding 
+* 7:45: Debug preivew not showing on Xcode
