@@ -17,7 +17,7 @@ struct ContentView: View {
                 UIColor(red: 0.70, green: 0.47, blue: 1.0, alpha: 1.0),
             ]
             
-            let gradientBackground = Gradient(colors: gradientColors.map { Color($0) })
+        _ = Gradient(colors: gradientColors.map { Color($0) })
             let backgroundImage = UIImage.imageFromGradient(colors: gradientColors, size: CGSize(width: UIScreen.main.bounds.width, height: 100))
             
             appearance.backgroundImage = backgroundImage

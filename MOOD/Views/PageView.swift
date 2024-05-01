@@ -30,7 +30,7 @@ struct PageView: View {
             
             if quizEnded {
                 QuizResultView(result: determineEmotion())
-                    .navigationTitle("Quiz Result")
+
             } else {
                 let currentPage: Quiz = shuffledQuestions[questionsAsked]
                 
@@ -45,6 +45,7 @@ struct PageView: View {
                     
                     Text(currentPage.questionText)
                         .font(.system(size: 30, weight: .bold))
+                        .shadow(color: Color.black, radius: 2, x: 0, y: 0)
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .padding()

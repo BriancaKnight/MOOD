@@ -51,6 +51,7 @@ struct QuizResultView: View {
                     .background(Color.purple)
                     .foregroundColor(.white)
                     .font(.system(size: 32, weight: .bold))
+                    .shadow(color: Color.black, radius: 2, x: 0, y: 0)
                     .multilineTextAlignment(.center)
                     .background(Color.white.opacity(0.8))
                     .cornerRadius(10)
@@ -88,7 +89,7 @@ struct QuizResultView: View {
             case "Feeling angry?":
                 return "Anger can be tough to handle. Try taking deep breaths or going for a walk to calm down."
             case "Feeling worried?":
-                return "Worry can be hard to control. Try writing down your thoughts or talking to someone about them."
+                return "Worry can be hard to control. Try telling your grown ups about your thoughts and ask for some snuggles."
             default:
                 return ""
         }
