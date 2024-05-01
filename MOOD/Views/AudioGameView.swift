@@ -223,6 +223,8 @@ struct AudioGameView: View {
         }
     }
     
+//    Fix logic starting here
+    
     func handleChoiceSelection(choiceIndex: Int) {
         let correctChoiceIndex = 0
         if choiceIndex == correctChoiceIndex {
@@ -240,6 +242,8 @@ struct AudioGameView: View {
             }
         }
     }
+    
+    //    Fix logic ending here
     
     func moveToNextPrompt() {
         audioPlayer?.stop()
