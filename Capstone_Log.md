@@ -117,3 +117,4 @@ This app aims to teach children how to identify emotions as well as provide sens
 * 10:00: Prepare for presentations
 * 12:00: Finish preparing for presentations/ update readme
 * 1:00: Build post for discord
+* 2:00: Apply for jobs
