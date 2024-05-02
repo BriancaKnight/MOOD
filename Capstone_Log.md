@@ -115,3 +115,4 @@ This app aims to teach children how to identify emotions as well as provide sens
 * 8:00: Whiteboarding
 * 8:30: Troubleshoot preview
 * 10:00: Prepare for presentations
+* 12:00: Finish preparing for presentations/ update readme
