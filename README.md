@@ -20,10 +20,11 @@ An emotional regulation app for children ages 4-7. This app was created to addre
 
 ## Technologies Used
 ![Swift](https://img.shields.io/badge/swift-%23FF69B4.svg?style=for-the-badge&logo=swift&logoColor=white)
-![Git](https://img.shields.io/badge/git-6e5494.svg?style=for-the-badge&logo=git&logoColor=white)
-![Xcode](https://img.shields.io/badge/Xcode-0078d7.svg?style=for-the-badge&logo=Xcode&logoColor=white)
-![Canva](https://img.shields.io/badge/canva-%2346B6AC.svg?style=for-the-badge&logo=canva&logoColor=white)
-![Pixlr](https://img.shields.io/badge/Pixlr-90EE90.svg?style=for-the-badge&logo=Pixlr&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23C8A2C8.svg?style=for-the-badge&logo=git&logoColor=white)
+![Xcode](https://img.shields.io/badge/Xcode-6e5494.svg?style=for-the-badge&logo=Xcode&logoColor=white)
+![Canva](https://img.shields.io/badge/canva-0078d7.svg?style=for-the-badge&logo=canva&logoColor=white)
+![Pixlr](https://img.shields.io/badge/Pixlr-%2346B6AC.svg?style=for-the-badge&logo=Pixlr&logoColor=white)
+![FreeSounds](https://img.shields.io/badge/freeSounds-90EE90.svg?style=for-the-badge)
 
 ## Getting Started
 
@@ -52,8 +53,8 @@ To view or edit this code, you will need to download apple's code editor Xcode.
 * None. 
 
 ## Stretch Goals
-* Add a "Breathing Exercise" functionality where users can blow out candles, spread the seeds of a dandilion, or make a kite fly in the wind to encourage centering and regulation.
-* Add a "Sensory Touch Drawing Board" where users can experience thereputic art with brushes that vibrate on different frequencies.
+* Add a "Breathing Exercise" functionality where users can blow out candles, spread the seeds of a dandelion, or make a kite fly in the wind to encourage centering and regulation.
+* Add a "Sensory Touch Drawing Board" where users can experience therapeutic art with brushes that vibrate on different frequencies.
 * Create different age groups for users. Currently the app is aimed to 4-7 year olds, and I would like to create a 8-11, 12-15, and "grown" age classes with more targeted help. 
 * Create user profiles to keep track of moods, journals, and artwork made in the drawing board. 
 
@@ -61,6 +62,5 @@ To view or edit this code, you will need to download apple's code editor Xcode.
 MIT License, see License.md for details
 
 ## Screenshots
-![Quiz page for MOOD](./MOOD/Assets.xcassets/quizScreenshot.imageset/quizScreenshot.png)
-![Moods page for MOOD](./MOOD/Assets.xcassets/mapScreenshot.imageset/mapScreenshot.png)
-![Audio quiz for MOOD](./MOOD/Assets.xcassets/audioScreenshot.imageset/audioScreenshot.png)
+![Quiz, Mood, and Audio screenshots of MOOD](./MOOD/Assets.xcassets/screenshots.imageset/screenshots.jpg)
+
