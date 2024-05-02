@@ -108,3 +108,8 @@ This app aims to teach children how to identify emotions as well as provide sens
 * 1:00: CONT test flight
 * 2:30: Test flight troubleshooting
 * 4:00: CONT test fight troubleshooting
+
+
+#### Thursday, May 2nd
+
+* 8:00: Whiteboarding
