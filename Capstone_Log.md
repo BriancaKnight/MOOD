@@ -123,3 +123,4 @@ This app aims to teach children how to identify emotions as well as provide sens
 #### Friday, May 3rd
 
 * 7:00: Prep for presentation
+* 8:00: Begin presentations 
